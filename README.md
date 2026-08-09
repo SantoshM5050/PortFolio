@@ -1,6 +1,6 @@
 <div align="center">
 
-![CyberOS Portfolio Banner](./public/cyber_os_banner.png)
+<img src="./public/cyber_os_banner.png" alt="CyberOS Portfolio Banner" width="100%" style="border-radius: 14px; max-height: 240px; object-fit: cover; border: 1px solid rgba(0,240,255,0.3);" />
 
 # 🚀 Multiverse CyberOS v2.088 — Interactive Web Operating System Portfolio
 
