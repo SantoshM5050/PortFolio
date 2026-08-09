@@ -1,52 +1,44 @@
 <div align="center">
 
-<table border="0">
+<table>
+<tr>
+<td align="center" width="250">
+<br/>
+<img src="./public/santosh_profile.jpg" width="140" height="140" style="border-radius: 50%; border: 3px solid #00f0ff;" /><br/><br/>
+<h2>Santosh Maurya</h2>
+<b>FullStack Developer</b><br/>
+<b>Software Support Engineer</b><br/><br/>
+<img src="https://img.shields.io/badge/-Nevitech Data Solutions-10b981?style=flat-square" /><br/>
+<img src="https://img.shields.io/badge/B.E. IT (SPPU)-7.99 CGPA-3178C6?style=flat-square" /><br/>
+<img src="https://img.shields.io/badge/📍 Delhi NCR-India-374151?style=flat-square" /><br/><br/>
+<a href="https://github.com/SantoshM5050"><img src="https://img.shields.io/badge/GitHub-SantoshM5050-181717?style=flat-square&logo=github" /></a>
+</td>
+<td align="center">
+<h1>🚀 Multiverse CyberOS v2.088</h1>
+<i>Interactive 7-in-1 Web Operating System Portfolio</i><br/><br/>
+<img src="https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Vite-6.0-646CFF?style=flat-square&logo=vite&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" /><br/><br/>
+<table>
   <tr>
-    <td align="center" width="220" style="vertical-align: middle; border: none;">
-      <img src="./public/santosh_profile.jpg" width="130" height="130" style="border-radius: 50%; border: 3px solid #00f0ff; box-shadow: 0 0 25px rgba(0,240,255,0.6); object-fit: cover;" /><br/>
-      <h3 style="margin-top: 8px; margin-bottom: 2px;"><b>Santosh Maurya</b></h3>
-      <span style="color: #00f0ff; font-size: 12px;"><b>Software Support Engineer & FullStack Developer</b></span><br/>
-      <small style="color: #94a3b8;">🎓 B.E. IT (2025 Batch) • SPPU <b>7.99 CGPA</b></small><br/>
-      <small style="color: #10b981;">💼 Nevitech Data Solutions Pvt Ltd</small>
-    </td>
-    <td align="left" style="vertical-align: middle; border: none; padding-left: 20px;">
-      <h1>🚀 Multiverse CyberOS v2.088</h1>
-      <h3><i>Interactive 7-in-1 Web Operating System Portfolio</i></h3>
-      <p>Welcome to my personal developer portfolio! Engineered as a multi-environment Web Operating System featuring 7 distinct desktop modes, glassmorphic window management, interactive CLI terminal, 3D particle constellation canvas, and production full-stack web applications.</p>
-      
-      <div>
-        <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black" /></a>
-        <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" /></a>
-        <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-6.0-646CFF?style=flat-square&logo=vite&logoColor=white" /></a>
-        <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" /></a>
-      </div>
-    </td>
+    <td align="center"><img src="./public/os_windows12_preview.png" width="180" /><br/><sub><b>🪟 Windows 12 Pro</b></sub></td>
+    <td align="center"><img src="./public/os_quantum_preview.png" width="180" /><br/><sub><b>🌀 Quantum Neural Matrix</b></sub></td>
+    <td align="center"><img src="./public/os_stark_preview.png" width="180" /><br/><sub><b>🛡️ Stark Spatial HUD</b></sub></td>
   </tr>
+  <tr>
+    <td align="center"><img src="./public/os_interstellar_preview.png" width="180" /><br/><sub><b>🚀 Interstellar Bridge</b></sub></td>
+    <td align="center"><img src="./public/os_matrix_preview.png" width="180" /><br/><sub><b>🟢 Matrix Code Stream</b></sub></td>
+    <td align="center"><img src="./public/os_synthwave_preview.png" width="180" /><br/><sub><b>🌇 Synthwave Outrun 80s</b></sub></td>
+  </tr>
+</table>
+<br/>
+<img src="./public/os_cyberos_preview.png" width="370" /><br/><sub><b>🖥️ CyberOS Web Desktop — Glassmorphic Draggable Window Manager</b></sub>
+</td>
+</tr>
 </table>
 
 </div>
-
----
-
-## 🖥️ Multiverse OS Desktop Previews
-
-<div align="center">
-
-<img src="./public/os_multiverse_previews.png" alt="7 Multiverse OS Desktop Previews" width="100%" style="border-radius: 14px; border: 1px solid rgba(0,240,255,0.3); shadow: 0 0 30px rgba(0,240,255,0.2);" />
-
-</div>
-
-### 🎛️ The 7 Interactive OS Environments
-
-| OS Mode | Desktop Visuals & Engine | Core Capabilities |
-| :--- | :--- | :--- |
-| 🪟 **Windows 12 Pro Edition** | Blue Bloom Wallpaper, Fluent Mica Glass, Centered Taskbar | Windows Start Menu, Pinned Apps Grid, Widgets & System Tray |
-| 🌀 **Quantum Neural Matrix v3.0** | 3D Holographic Particle Constellation Canvas | Dynamic 3D Particle Mesh, Laser Synapse Skill Firing |
-| 🛡️ **Stark Spatial HUD Mark-88** | JARVIS Tactical Target Reticles & Arc Reactor Glow | Target Reticle Scanning, Arc Reactor Telemetry, Biometrics |
-| 🚀 **Interstellar Command System** | Starship Santosh-01 Cockpit & 3D Warp Speed Canvas | Warp-Speed Particle Vectors, Starship Flight Telemetry Log |
-| 🟢 **Matrix Code Stream OS** | Real-Time Katakana Digital Code Rain Console | Falling Code Drops, Memory Hex Dump, Hacker CLI Shell |
-| 🌇 **Synthwave Outrun 80s OS** | 1980s Sunset Grid Horizon, Cassette Tapes & Arcade | VHS Glitch Filters, Retro Cassette Player, Mini Arcade Cabinet |
-| 🖥️ **CyberOS Web Desktop** | Glassmorphic Desktop with Draggable Windows & Taskbar | Z-Index Focus Stack, Drag/Resize Engine, CLI & Audio SFX |
 
 ---
 
@@ -55,91 +47,68 @@
 ### 1. 🏥 [Shreyaan Physiotherapy Center](https://www.shreyaanphysiotherapycenter.in/)
 > **Full-Stack Healthcare Patient Management & Online Appointment Platform**
 
-* 🔗 **Live Platform**: [www.shreyaanphysiotherapycenter.in](https://www.shreyaanphysiotherapycenter.in/)
-* 🛠️ **Tech Stack**: `React` • `TypeScript` • `Tailwind CSS` • `Node.js` • `Express` • `MongoDB` • `WhatsApp API`
-* 💡 **Key Features**:
-  * Real-time online appointment scheduling & slot booking.
-  * Specialized therapy services catalog & treatment package details.
-  * Direct WhatsApp inquiry & consultation notifications.
-  * High-performance mobile responsive glassmorphic design.
+* 🔗 **Live**: [www.shreyaanphysiotherapycenter.in](https://www.shreyaanphysiotherapycenter.in/)
+* 🛠️ **Stack**: `React` · `TypeScript` · `Tailwind CSS` · `Node.js` · `Express` · `MongoDB` · `WhatsApp API`
+* ✅ Real-time appointment scheduling, therapy services catalog, WhatsApp notifications, mobile responsive UI.
 
 ---
 
 ### 2. 📊 [SM Core Dashboard & Discord Bot](https://smcoredashboard.vercel.app/login)
 > **Full-Stack Automated Discord Bot & Real-Time Analytics Dashboard**
 
-* 🔗 **Live Platform**: [smcoredashboard.vercel.app/login](https://smcoredashboard.vercel.app/login)
-* 🛠️ **Tech Stack**: `React` • `TypeScript` • `Node.js` • `Discord.js` • `Vite` • `Tailwind CSS` • `REST API` • `Vercel`
-* 💡 **Key Features**:
-  * Full working automated Discord bot backend integration.
-  * Secure user authentication login & role-based access control.
-  * Real-time telemetry monitoring & interactive analytical widget charts.
-  * Deployed on Vercel high-speed cloud edge infrastructure.
+* 🔗 **Live**: [smcoredashboard.vercel.app/login](https://smcoredashboard.vercel.app/login)
+* 🛠️ **Stack**: `React` · `TypeScript` · `Node.js` · `Discord.js` · `Vite` · `Tailwind CSS` · `REST API` · `Vercel`
+* ✅ Full working automated Discord bot backend, secure auth login, real-time analytics & telemetry, deployed on Vercel.
 
 ---
 
-## 👨‍💻 Education & Work Experience
+## 🎛️ OS Environment Breakdown
 
-```
-+-------------------------------------------------------------------------------+
-|  Nevitech Data Solutions Pvt Ltd | Trainee Software Support Engineer           |
-|  Jul 2026 - Present (Noida, India)                                            |
-|  - Technical support for NCampus Campus Management System                     |
-|  - Database querying, module workflow verification, client escalation support  |
-+-------------------------------------------------------------------------------+
-|  Savitribai Phule Pune University (SPPU) | B.E. Information Technology (2025)  |
-|  Grade: 7.99 CGPA                                                             |
-|  - Core Focus: DSA, DBMS, Computer Networks, Software Engineering & Web UIs  |
-+-------------------------------------------------------------------------------+
-```
+| OS Mode | Theme | Core Engine |
+| :--- | :--- | :--- |
+| 🪟 **Windows 12 Pro** | Mica Glass, Centered Taskbar, Aurora Wallpaper | Start Menu, Widgets, System Tray |
+| 🌀 **Quantum Neural Matrix** | 3D Holographic Particle Constellation | Canvas 3D Node Mesh, Skill Synapse Firing |
+| 🛡️ **Stark Spatial HUD** | JARVIS Tactical Reticles, Arc Reactor Glow | Target Scan, Telemetry, Biometrics |
+| 🚀 **Interstellar Bridge** | Starship Cockpit, Warp Speed Canvas | Particle Vectors, Flight Log |
+| 🟢 **Matrix Code Stream** | Katakana Digital Rain, Hacker CLI | Falling Code Canvas, Hex Dump, Shell |
+| 🌇 **Synthwave Outrun 80s** | Neon Grid Sunset, Cassette Deck | VHS Filters, Retro Player, Arcade |
+| 🖥️ **CyberOS Web Desktop** | Glassmorphic Draggable Windows | Z-Index Stack, Drag/Resize, Audio SFX |
 
 ---
 
-## ⚡ Quick Start & Local Setup
+## ⚡ Quick Start
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/SantoshM5050/PortFolio.git
-
-# 2. Navigate to the project directory
 cd PortFolio
-
-# 3. Install dependencies
 npm install
-
-# 4. Start the Vite development server
 npm run dev
 ```
 
-Open your browser at `http://localhost:5173/` (or `http://localhost:5175/`).
-
----
-
-## 🛠️ Production Build & Verification
+Open `http://localhost:5173/` in your browser.
 
 ```bash
-# Build production bundle with TypeScript type checks
+# Production build
 npm run build
-
-# Preview production bundle locally
-npm run preview
 ```
 
 ---
 
-## 📬 Contact & Connect
+## 👨‍💻 Background
 
-* 👨‍💻 **Developer**: Santosh Maurya
-* 💼 **Current Role**: Trainee Software Support Engineer at **Nevitech Data Solutions**
-* 🎓 **Education**: B.E. IT (2025), Savitribai Phule Pune University — **7.99 CGPA**
-* 📍 **Location**: Delhi NCR, India
-* 🌐 **GitHub Profile**: [github.com/SantoshM5050](https://github.com/SantoshM5050)
-* 🔗 **Live Projects**:
-  * [Shreyaan Physiotherapy Center](https://www.shreyaanphysiotherapycenter.in/)
-  * [SM Core Dashboard & Discord Bot](https://smcoredashboard.vercel.app/login)
+```
+💼  Trainee Software Support Engineer — Nevitech Data Solutions Pvt Ltd (Jul 2026 – Present)
+     Supporting NCampus Campus Management System | Database Queries | Client Escalations
+
+🎓  B.E. Information Technology — Savitribai Phule Pune University (SPPU) | 2025 Batch
+     7.99 CGPA | DSA · DBMS · Computer Networks · Software Engineering · Full-Stack Web Dev
+
+📍  Delhi NCR, India
+🌐  github.com/SantoshM5050
+```
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by Santosh Maurya • Powered by React 19 & Vite</sub>
+  <sub>Built with ❤️ by Santosh Maurya • React 19 + TypeScript + Vite</sub>
 </div>
