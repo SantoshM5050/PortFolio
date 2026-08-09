@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-orbitron: 'Orbitron', sans-serif;
+    --font-fira: 'Fira Code', monospace;
+    --font-tech: 'Fira Code', monospace;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: #030508;
+    color: #e2e8f0;
+    overflow: hidden;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Cyberpunk Font Classes */
+.font-orbitron {
+  font-family: var(--font-orbitron);
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.font-fira {
+  font-family: var(--font-fira);
+}
+
+/* Ultra Glassmorphism */
+.cyber-glass {
+  background: rgba(8, 14, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 240, 255, 0.08);
+}
+
+.cyber-glass-magenta {
+  background: rgba(22, 8, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 0, 128, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 0, 128, 0.08);
+}
+
+.cyber-glass-matrix {
+  background: rgba(4, 22, 10, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 102, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 255, 102, 0.08);
+}
+
+.cyber-glass-solar {
+  background: rgba(24, 18, 5, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 170, 0, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 170, 0, 0.08);
+}
+
+/* Background Grids */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+}
+
+/* Sci-Fi Perspective Grid Animation */
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
+
+.perspective-grid {
+  perspective: 500px;
+}
+
+.perspective-grid-inner {
+  transform: rotateX(60deg);
+  animation: gridMove 2s linear infinite;
+}
+
+/* Neon Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), inset 0 0 12px rgba(0, 240, 255, 0.3);
+}
+
+.glow-pink {
+  box-shadow: 0 0 25px rgba(255, 0, 128, 0.5), inset 0 0 12px rgba(255, 0, 128, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px rgba(0, 255, 102, 0.5), inset 0 0 12px rgba(0, 255, 102, 0.3);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 25px rgba(255, 170, 0, 0.5), inset 0 0 12px rgba(255, 170, 0, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.8), 0 0 25px rgba(255, 0, 128, 0.5);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.8), 0 0 25px rgba(0, 255, 102, 0.5);
+}
+
+/* Custom Cyberpunk Floating Animation */
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+.animate-float {
+  animation: floatAnim 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Custom Futuristic Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 10, 20, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
