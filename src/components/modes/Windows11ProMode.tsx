@@ -156,8 +156,8 @@ export const Windows11ProMode: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop Workspace Grid Shortcuts (All Apps) */}
-      <div className="absolute top-16 left-6 z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-[calc(100vh-120px)] overflow-y-auto pr-2 select-none">
+      {/* Desktop Workspace Multi-Column Grid Shortcuts (Real Windows Layout) */}
+      <div className="absolute top-16 left-6 z-10 grid grid-flow-col grid-rows-4 sm:grid-rows-5 gap-3 max-h-[calc(100vh-130px)] select-none">
         {appIcons.map((app) => {
           const Icon = app.icon;
           return (

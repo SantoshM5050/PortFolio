@@ -143,8 +143,8 @@ export const Desktop: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop App Icons Grid */}
-      <div className="absolute top-16 left-6 z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 p-2 pointer-events-auto">
+      {/* Desktop App Icons Multi-Column Grid */}
+      <div className="absolute top-16 left-6 z-10 grid grid-flow-col grid-rows-4 sm:grid-rows-5 gap-3 p-2 pointer-events-auto max-h-[calc(100vh-130px)] select-none">
         {DESKTOP_ICONS.map((icon) => (
           <button
             key={icon.id}
