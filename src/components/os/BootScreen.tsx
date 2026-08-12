@@ -50,129 +50,129 @@ export const BootScreen: React.FC = () => {
       case 'windows_12_pro':
       case 'windows_11_pro' as unknown:
         return {
-          title: 'Windows 12 Pro Edition',
-          subtitle: 'Starting Windows 12 Pro...',
+          title: 'Windows 12 Pro Mode',
+          subtitle: 'Initializing Fluent Mica Environment...',
           icon: LayoutGrid,
           accentColor: 'text-blue-400',
           borderColor: 'border-blue-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(59,130,246,0.4)]',
           barGradient: 'from-blue-600 via-cyan-400 to-indigo-500',
           logs: [
-            'Starting Windows 12 Pro Edition...',
-            'Initializing Windows Fluent Mica Backdrop Engine...',
-            'Getting things ready for Santosh Maurya (B.E. IT 2025)...',
-            'Loading Centered Taskbar & Start Menu Widgets...',
-            'Connecting Nevitech Software Support Services...',
-            'Welcome to Windows 12 Pro Edition.'
+            'Initializing React 19 Virtual DOM & Windows Mica Engine...',
+            'Loading TypeScript 5.7 type definitions & window state...',
+            'Fetching portfolio profile: Santosh Maurya (Nevitech / B.E. IT 2025)...',
+            'Mounting Centered Taskbar, Start Menu & Window Drag Manager...',
+            'Connecting Web3Forms API & Multi-Language Compiler Engine...',
+            'Welcome! Windows 12 Pro Mode Ready.'
           ]
         };
       case 'matrix_rain':
         return {
           title: 'MATRIX CODE STREAM OS',
-          subtitle: 'DIGITAL KATAKANA RAIN CONSOLE',
+          subtitle: 'DIGITAL KATAKANA CODE STREAM',
           icon: Terminal,
           accentColor: 'text-emerald-400',
           borderColor: 'border-emerald-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(0,255,102,0.3)]',
           barGradient: 'from-emerald-500 via-green-400 to-teal-300',
           logs: [
-            '[MATRIX_INIT] Firing digital code stream renderer...',
-            '[DECODE] Parsing Katakana / Latin symbol drops...',
-            '[HACKER_CLI] Mounting Santosh Maurya Operator Shell...',
-            '[SECURITY] Bypassing mainframe encryption barriers...',
-            '[NODES] Mounting Code Matrix Nodes...',
-            '[MATRIX_READY] Matrix Code Stream OS online.'
+            '[INIT] Initializing Katakana Code Canvas & CRT Scanlines...',
+            '[PARSER] Mounting Santosh Maurya developer terminal shell...',
+            '[CONFIG] Loading PostgreSQL schema & Discord.js bot snippets...',
+            '[ENGINE] Registering CLI commands (help, bio, skills, projects, clear)...',
+            '[STATUS] Verifying identity: Santosh Maurya (Full Stack Engineer)...',
+            '[READY] Matrix Code Stream OS Loaded.'
           ]
         };
       case 'synthwave_arcade':
         return {
-          title: 'SYNTHWAVE OUTRUN 80s OS',
-          subtitle: 'RETRO HORIZON GRID & CASSETTE DECK',
+          title: 'SYNTHWAVE 80S ARCADE OS',
+          subtitle: 'RETRO HORIZON GRID & CASSETTE PLAYER',
           icon: Music,
           accentColor: 'text-pink-400',
           borderColor: 'border-pink-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(255,0,128,0.3)]',
           barGradient: 'from-pink-500 via-purple-500 to-amber-400',
           logs: [
-            '[OUTRUN_INIT] Igniting 1980s Sunset Grid Horizon...',
-            '[AUDIO_80S] Spinning Retro Synthwave Cassette Tapes...',
-            '[VHS_SCAN] Calibrating VHS Scanline filter...',
-            '[ARCADE] Mounting 80s Mini Arcade Cabinet...',
-            '[OPERATOR] Loading Santosh Maurya Retro Cassette Deck...',
-            '[OUTRUN_READY] Synthwave Outrun 80s OS fully booted.'
+            '[AUDIO_80S] Initializing Web Audio API & Synth Radio Player...',
+            '[RETRO_GRID] Rendering 1980s Neon Grid Sunset Horizon...',
+            '[ARCADE] Loading Mini Arcade Challenge Canvas...',
+            '[CASSETTE] Mounting Santosh Maurya Audio Track Catalog...',
+            '[STATUS] Software Support Engineer Profile Synchronized...',
+            '[READY] Synthwave 80s OS Ready.'
           ]
         };
       case 'stark_hud':
         return {
-          title: 'STARK SPATIAL HUD',
-          subtitle: 'MARK-88 TACTICAL SPATIAL INTERFACE',
+          title: 'STARK MARK-88 SPATIAL HUD',
+          subtitle: 'TACTICAL SPATIAL INTERFACE SYSTEM',
           icon: Crosshair,
           accentColor: 'text-amber-400',
           borderColor: 'border-amber-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(255,170,0,0.3)]',
           barGradient: 'from-red-600 via-amber-500 to-yellow-400',
           logs: [
-            '[STARK_MARK88] Initializing Arc Reactor Core Power Matrix...',
-            '[BIOMETRICS] Scanning Retinal Pattern for Santosh Maurya...',
-            '[JARVIS_AI] Mounting Spatial Holographic Targets & Radial Arcs...',
-            '[TELEMETRY] Calibrating 360-degree Target Reticles...',
-            '[DEFENSE_GRID] Threat Level: ZERO | All Systems Nominal...',
-            '[STARK_READY] Spatial HUD Mark-88 Online.'
+            '[HUD_MARK88] Initializing Spatial Reticle Engine...',
+            '[BIOMETRICS] Loading Engineer Credentials: Santosh Maurya (B.E. IT 2025)...',
+            '[RADIAL_UI] Mounting 360-degree Radial Skill Nodes & System Diagnostics...',
+            '[APPLICATIONS] Registering Project Vault, Code Lab & Live Web Browser...',
+            '[STATUS] All 7 Multiverse Systems Operational...',
+            '[READY] Stark Spatial HUD Online.'
           ]
         };
       case 'interstellar_bridge':
         return {
           title: 'INTERSTELLAR COMMAND BRIDGE',
-          subtitle: 'STARSHIP SANTOSH-01 NAVIGATION SYSTEM',
+          subtitle: 'STARSHIP NAVIGATION COCKPIT SYSTEM',
           icon: Rocket,
           accentColor: 'text-emerald-400',
           borderColor: 'border-emerald-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(0,255,102,0.3)]',
           barGradient: 'from-emerald-500 via-teal-400 to-cyan-500',
           logs: [
-            '[BRIDGE_NAV] Calibrating Interstellar Warp Coordinates...',
-            '[THRUSTERS] Charging Antimatter Plasma Thrusters...',
-            '[STARFIELD_3D] Rendering Warp-Speed Particle Vector Mesh...',
-            '[COMMS] Establishing Sub-space Relay Node Connection...',
-            '[SHIELDS] Deflector Shields set to 100% Maximum...',
-            '[WARP_READY] Starship Santosh-01 ready for warp.'
+            '[NAV_BRIDGE] Initializing 3D Starfield Warp Speed Canvas...',
+            '[TELEMETRY] Loading Santosh Maurya Experience Log (Nevitech / Software Support)...',
+            '[SYSTEMS] Mounting Project Vault & Live Web Browser Pipeline...',
+            '[SECURITY] SSL Encryption & Secure Communication Channel Established...',
+            '[STATUS] Warp Drive Coordinates Locked...',
+            '[READY] Interstellar Command Bridge Online.'
           ]
         };
       case 'quantum_matrix':
         return {
-          title: 'QUANTUM NEURAL MATRIX',
-          subtitle: '3D HOLOGRAPHIC CONSTELLATION PROTOCOL',
+          title: 'QUANTUM CONSTELLATION OS',
+          subtitle: 'HOLOGRAPHIC NODE GRAPH SYSTEM',
           icon: Sparkles,
           accentColor: 'text-cyan-400',
           borderColor: 'border-cyan-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(0,240,255,0.3)]',
           barGradient: 'from-cyan-500 via-purple-500 to-pink-500',
           logs: [
-            '[QUANTUM_INIT] Mounting Holographic Neural Matrix v3.0...',
-            '[SYNAPSE_CHECK] Mapping 3D Particle Constellation Nodes...',
-            '[NEURAL_MESH] Firing laser impulse synapse connections...',
-            '[SECURITY] Verifying identity: Santosh Maurya (B.E. IT 2025)...',
-            '[QUANTUM_VRAM] Allocating High-Bandwidth Holographic VRAM...',
-            '[MATRIX_READY] Quantum Neural Matrix fully operational.'
+            '[QUANTUM_INIT] Mounting Interactive 3D Node Constellation...',
+            '[SYNAPSE_MESH] Binding Skill Arsenal & Technical Stack Nodes...',
+            '[COMPILER] Initializing Multi-Language Code Sandbox (Python, JS, C++, Java, C#)...',
+            '[PORTFOLIO] Synchronizing Santosh Maurya Repositories & Demos...',
+            '[STATUS] Memory & VRAM Allocation Optimal...',
+            '[READY] Quantum Constellation OS Fully Operational.'
           ]
         };
       case 'cyberos':
       default:
         return {
-          title: 'CYBEROS WEB OS',
-          subtitle: 'ADVANCED GLASSMORPHISM DESKTOP SYSTEM',
+          title: 'CYBEROS GLASS DESKTOP',
+          subtitle: 'GLASSMORPHIC WINDOW MANAGER',
           icon: Cpu,
           accentColor: 'text-cyan-400',
           borderColor: 'border-cyan-500/40',
           glowColor: 'shadow-[0_0_40px_rgba(0,240,255,0.3)]',
           barGradient: 'from-cyan-500 via-teal-400 to-emerald-400',
           logs: [
-            '[CYBER_INIT] Initializing CyberOS Kernel v2.088...',
+            '[CYBER_INIT] Initializing CyberOS Kernel v3.0...',
             '[WINDOW_MGR] Mounting Z-Index Focus Engine & Glassmorphic Frames...',
-            '[SYSTEM_APPS] Loading user_profile.sys, cyber_terminal.exe...',
+            '[SYSTEM_APPS] Registering user_profile.sys, code_lab.exe, cyber_browser.exe...',
             '[AUDIO_SYNTH] Initializing Web Audio API Sound Synthesizer...',
-            '[SECURITY] Operator Identity Verified: Santosh Maurya...',
-            '[CYBER_READY] CyberOS Web Desktop loaded successfully.'
+            '[DEVELOPER] Profile Loaded: Santosh Maurya (B.E. IT 2025)...',
+            '[READY] CyberOS Glass Desktop Loaded Successfully.'
           ]
         };
     }

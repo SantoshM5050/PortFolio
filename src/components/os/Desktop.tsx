@@ -171,13 +171,17 @@ export const Desktop: React.FC = () => {
           <h1 className="font-orbitron font-black text-5xl md:text-7xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500">
             SANTOSH MAURYA
           </h1>
-          <div className="mt-2 font-tech text-xs tracking-[0.4em] text-cyan-300">
-            // FULLSTACK DEVELOPER & CYBER UI ARCHITECT //
+          <div className="mt-2 font-tech text-xs tracking-[0.3em] text-cyan-300">
+            FULLSTACK DEVELOPER & SOFTWARE SUPPORT ENGINEER · B.E. IT 2025
           </div>
-          <div className="mt-4 flex items-center justify-center gap-4 text-[10px] font-mono text-slate-500">
-            <span>[ SYSTEM: OPERATIONAL ]</span>
-            <span>[ CORE: REACT 19 / VITE ]</span>
-            <span>[ NODE: DEL-01 ]</span>
+          <div className="mt-4 flex items-center justify-center gap-4 text-[11px] font-mono text-slate-400">
+            <span>React 19</span>
+            <span>·</span>
+            <span>TypeScript 5.7</span>
+            <span>·</span>
+            <span>Tailwind CSS v4</span>
+            <span>·</span>
+            <span>Nevitech</span>
           </div>
         </div>
       </div>

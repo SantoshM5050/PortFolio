@@ -132,13 +132,10 @@ export const SynthwaveAppRenderer: React.FC<Props> = ({ windowId }) => {
             <div key={i} className="p-4 rounded-2xl bg-black/90 border border-pink-500/40 space-y-2 text-xs font-tech">
               <div className="flex justify-between items-center text-white font-orbitron">
                 <span>{s.name}</span>
-                <span className="text-[10px] text-amber-300">{s.bpm} | {s.level}%</span>
+                <span className="text-[10px] text-amber-300 font-bold px-2 py-0.5 rounded bg-pink-950 border border-pink-500/40">{s.bpm}</span>
               </div>
-              <div className="w-full h-3 rounded-full bg-black border border-pink-500/40 p-0.5 overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-pink-500 via-purple-500 to-amber-400 rounded-full shadow-[0_0_12px_rgba(255,0,128,0.8)]"
-                  style={{ width: `${s.level}%` }}
-                ></div>
+              <div className="w-full h-2 rounded-full bg-black border border-pink-500/40 overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-pink-500 via-purple-500 to-amber-400 rounded-full shadow-[0_0_12px_rgba(255,0,128,0.8)] w-full" />
               </div>
             </div>
           ))}

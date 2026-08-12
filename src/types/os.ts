@@ -50,5 +50,5 @@ export interface ProjectItem {
 
 export interface SkillCategory {
   name: string;
-  skills: { name: string; level: number; iconName?: string; experience?: string }[];
+  skills: { name: string; level?: number; status?: string; iconName?: string; experience?: string }[];
 }

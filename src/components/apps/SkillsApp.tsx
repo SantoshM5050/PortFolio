@@ -4,31 +4,31 @@ import { Cpu, Zap, Shield, Rocket, Terminal, Music } from 'lucide-react';
 
 interface SkillItem {
   name: string;
-  level: number;
+  status: string;
   experience: string;
   category: 'Frontend' | 'Backend' | 'Database / Cloud' | 'Tools & AI';
 }
 
 const SKILLS_DATA: SkillItem[] = [
-  { name: 'TypeScript / JavaScript (ESNext)', level: 95, experience: '4 yrs', category: 'Frontend' },
-  { name: 'React 18 / 19 & Next.js 15', level: 92, experience: '3.5 yrs', category: 'Frontend' },
-  { name: 'Tailwind CSS & CSS Modules', level: 95, experience: '4 yrs', category: 'Frontend' },
-  { name: 'HTML5 Canvas & WebGL / Three.js', level: 82, experience: '2 yrs', category: 'Frontend' },
-  { name: 'Framer Motion & Web Animations', level: 88, experience: '2.5 yrs', category: 'Frontend' },
+  { name: 'TypeScript / JavaScript (ESNext)', status: 'PROD READY', experience: 'Core Stack', category: 'Frontend' },
+  { name: 'React 18 / 19 & Next.js 15', status: 'PROD READY', experience: 'FullStack', category: 'Frontend' },
+  { name: 'Tailwind CSS & CSS Modules', status: 'ADVANCED', experience: 'UI Design', category: 'Frontend' },
+  { name: 'HTML5 Canvas & WebGL Animations', status: 'ADVANCED', experience: 'Interactive UI', category: 'Frontend' },
+  { name: 'Framer Motion & Modern Web UI', status: 'ADVANCED', experience: 'UI Animations', category: 'Frontend' },
 
-  { name: 'Node.js & Express / NestJS', level: 90, experience: '3.5 yrs', category: 'Backend' },
-  { name: 'REST APIs & GraphQL', level: 88, experience: '3 yrs', category: 'Backend' },
-  { name: 'Discord.js & Bot Architectures', level: 85, experience: '2 yrs', category: 'Backend' },
-  { name: 'Python & FastAPI', level: 80, experience: '2 yrs', category: 'Backend' },
+  { name: 'Node.js & Express / NestJS', status: 'PROD READY', experience: 'Backend APIs', category: 'Backend' },
+  { name: 'REST APIs & GraphQL Services', status: 'PROD READY', experience: 'API Routes', category: 'Backend' },
+  { name: 'Discord.js & SaaS Bot Engines', status: 'EXPERT', experience: 'Bot Architecture', category: 'Backend' },
+  { name: 'Python & FastAPI', status: 'PROFICIENT', experience: 'Scripting & AI', category: 'Backend' },
 
-  { name: 'PostgreSQL & Prisma ORM', level: 88, experience: '3 yrs', category: 'Database / Cloud' },
-  { name: 'MongoDB & Mongoose', level: 85, experience: '3 yrs', category: 'Database / Cloud' },
-  { name: 'Docker & Containerization', level: 78, experience: '2 yrs', category: 'Database / Cloud' },
-  { name: 'Google Cloud GCP & Vercel', level: 82, experience: '2.5 yrs', category: 'Database / Cloud' },
+  { name: 'PostgreSQL & Prisma ORM', status: 'PROD READY', experience: 'Relational DB', category: 'Database / Cloud' },
+  { name: 'MongoDB & Mongoose Schema', status: 'PROD READY', experience: 'NoSQL DB', category: 'Database / Cloud' },
+  { name: 'Docker & Containerization', status: 'ADVANCED', experience: 'DevOps & Containers', category: 'Database / Cloud' },
+  { name: 'Google Cloud GCP & Vercel', status: 'PROD READY', experience: 'Cloud Hosting', category: 'Database / Cloud' },
 
-  { name: 'Gemini AI API & OpenAI SDK', level: 88, experience: '2 yrs', category: 'Tools & AI' },
-  { name: 'Git, GitHub & CI/CD Pipelines', level: 92, experience: '4 yrs', category: 'Tools & AI' },
-  { name: 'Vite & Webpack Tooling', level: 90, experience: '3 yrs', category: 'Tools & AI' },
+  { name: 'Gemini AI API & OpenAI SDK', status: 'ADVANCED', experience: 'GenAI Tools', category: 'Tools & AI' },
+  { name: 'Git, GitHub & CI/CD Pipelines', status: 'PROD READY', experience: 'Version Control', category: 'Tools & AI' },
+  { name: 'Vite & Webpack Tooling', status: 'PROD READY', experience: 'Build Pipeline', category: 'Tools & AI' },
 ];
 
 export const SkillsApp: React.FC = () => {
@@ -144,8 +144,8 @@ export const SkillsApp: React.FC = () => {
           <span className="px-2.5 py-1 rounded-full bg-black/80 border border-white/10 text-white">
             NODES: {SKILLS_DATA.length}
           </span>
-          <span className={`px-2.5 py-1 rounded-full bg-black/80 border border-white/10 ${theme.textColor}`}>
-            AVG: 87%
+          <span className={`px-2.5 py-1 rounded-full bg-black/80 border border-white/10 font-bold ${theme.textColor}`}>
+            CORE STACK
           </span>
         </div>
       </div>
@@ -167,7 +167,7 @@ export const SkillsApp: React.FC = () => {
         ))}
       </div>
 
-      {/* Skills Power Meters Grid */}
+      {/* Skills Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredSkills.map((skill, index) => (
           <div
@@ -183,16 +183,15 @@ export const SkillsApp: React.FC = () => {
                 <span className="text-[10px] px-2 py-0.5 rounded bg-black/80 text-slate-400 border border-white/10">
                   {skill.experience}
                 </span>
-                <span className={`font-bold ${theme.textColor}`}>{skill.level}%</span>
+                <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono bg-black/80 border border-white/10 ${theme.textColor}`}>
+                  {skill.status}
+                </span>
               </div>
             </div>
 
-            {/* Glowing Neon Bar */}
-            <div className="w-full h-2.5 rounded-full bg-black p-0.5 border border-white/10 overflow-hidden">
-              <div
-                className={`h-full bg-gradient-to-r ${theme.meterGradient} rounded-full transition-all duration-500`}
-                style={{ width: `${skill.level}%` }}
-              ></div>
+            {/* Glowing Accent Indicator Bar */}
+            <div className="w-full h-2 rounded-full bg-black p-0.5 border border-white/10 overflow-hidden">
+              <div className={`h-full bg-gradient-to-r ${theme.meterGradient} rounded-full w-full`} />
             </div>
           </div>
         ))}

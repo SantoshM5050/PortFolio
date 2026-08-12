@@ -6,65 +6,65 @@ import { Cpu, Power, Sparkles, ShieldCheck, Rocket, Monitor, CheckCircle2, Chevr
 const INTERFACE_OPTIONS: { id: SystemInterfaceMode; title: string; subtitle: string; desc: string; icon: React.ElementType; badge: string; color: string }[] = [
   {
     id: 'windows_12_pro',
-    title: 'Windows 12 Pro Edition',
-    subtitle: 'Fluent Design Centered Taskbar',
-    desc: 'Modern Mica Backdrop, Centered Taskbar, Windows Start Menu, Widgets & Fluent UI',
+    title: 'Windows 12 Pro Mode',
+    subtitle: 'Modern Fluent Mica Desktop',
+    desc: 'Fluent Mica UI, Centered Taskbar, Start Menu, Window Dragging & Desktop Grid',
     icon: LayoutGrid,
-    badge: 'FLUENT UI',
+    badge: 'FLUENT DESKTOP',
     color: 'from-blue-600 to-indigo-600 border-blue-500/60 text-blue-400',
   },
   {
     id: 'quantum_matrix',
-    title: 'Quantum Neural Matrix v3.0',
-    subtitle: 'Holographic Constellation Engine',
-    desc: '3D Interactive Particle Field & Firing Laser Synapse Skill Nodes',
+    title: 'Quantum Constellation OS',
+    subtitle: 'Holographic Node Graph Engine',
+    desc: '3D Constellation Nodes, Firing Skill Synapses & Interactive Skill Matrix',
     icon: Sparkles,
-    badge: 'HOLOGRAPHIC',
+    badge: 'NODE MATRIX',
     color: 'from-cyan-500 to-purple-600 border-cyan-400/60 text-cyan-300',
   },
   {
     id: 'stark_hud',
-    title: 'Stark Spatial HUD Mark-88',
-    subtitle: 'JARVIS Tactical Target System',
-    desc: 'Spatial Reticle Interface, Arc Reactor Core, & Biometric Lock',
+    title: 'Stark Mark-88 Spatial HUD',
+    subtitle: 'Tactical Spatial Interface',
+    desc: 'Spatial Reticle System, Biometric Lock, & Iron Man Spatial UI Theme',
     icon: ShieldCheck,
-    badge: 'JARVIS HUD',
+    badge: 'SPATIAL HUD',
     color: 'from-red-600 to-amber-500 border-amber-500/60 text-amber-400',
   },
   {
     id: 'interstellar_bridge',
-    title: 'Interstellar Command System',
-    subtitle: 'Starship Santosh-01 Cockpit',
-    desc: 'Starship Cockpit Bridge with 3D Starfield Warp Speed Canvas',
+    title: 'Interstellar Cockpit OS',
+    subtitle: 'Starship Navigation Bridge',
+    desc: 'Deep Space Cockpit Viewport, 3D Warp Canvas & Telemetry Controls',
     icon: Rocket,
-    badge: 'WARP DRIVE',
+    badge: 'WARP BRIDGE',
     color: 'from-emerald-500 to-teal-600 border-emerald-400/60 text-emerald-300',
   },
   {
     id: 'cyberos',
-    title: 'CyberOS Web Desktop',
-    subtitle: 'Window Manager & CLI Environment',
-    desc: 'Classic Web Desktop with Draggable Glass Windows, Taskbar & CLI',
+    title: 'CyberOS Glass Desktop',
+    subtitle: 'Classic Web Desktop & Taskbar',
+    desc: 'Glassmorphic Window Manager, Desktop Shortcuts, Start Menu & Cyber CLI',
     icon: Monitor,
-    badge: 'CYBERPUNK',
+    badge: 'GLASS DESKTOP',
     color: 'from-cyan-600 to-blue-700 border-cyan-400/60 text-cyan-300',
   },
   {
     id: 'matrix_rain',
     title: 'Matrix Code Stream OS',
-    subtitle: 'Digital Katakana Rain Console',
-    desc: 'Falling Green Code Rain Canvas & Hacker Terminal Architecture',
+    subtitle: 'Digital Code Stream Terminal',
+    desc: 'Falling Green Code Rain Canvas, Hacker Shell & Terminal Controls',
     icon: Terminal,
-    badge: 'KATAKANA',
+    badge: 'CODE STREAM',
     color: 'from-emerald-600 to-green-800 border-emerald-500/60 text-emerald-400',
   },
   {
     id: 'synthwave_arcade',
-    title: 'Synthwave Outrun 80s OS',
+    title: 'Synthwave 80s Arcade OS',
     subtitle: 'Retro Horizon Grid & Cassette Deck',
-    desc: '1980s Neon Grid Sunset Horizon, Cassette Tapes & Synth Player',
+    desc: '1980s Sunset Horizon Grid, Audio Cassette Player & Mini Arcade Challenge',
     icon: Music,
-    badge: 'OUTRUN 80S',
+    badge: '80S SYNTHWAVE',
     color: 'from-pink-600 to-purple-600 border-pink-500/60 text-pink-400',
   },
 ];
@@ -94,23 +94,23 @@ export const LoginPortalScreen: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-[99999] bg-[#020408] text-white font-mono flex items-center justify-center p-4 select-none overflow-hidden">
-      {/* Authentic BIOS Grid Background */}
+    <div className="fixed inset-0 z-[99999] bg-[#020408] text-white font-sans flex items-center justify-center p-4 select-none overflow-hidden">
+      {/* Authentic Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
 
-      {/* Main BIOS Bootloader Screen Container */}
+      {/* Main OS Selector Screen Container */}
       <div className="relative z-10 max-w-4xl w-full bg-[#050a12]/95 backdrop-blur-2xl rounded-2xl border border-cyan-500/40 p-6 sm:p-8 shadow-[0_0_80px_rgba(0,240,255,0.25)] space-y-6 max-h-[92vh] flex flex-col justify-between overflow-y-auto">
         
-        {/* BIOS Top Header Bar */}
+        {/* Top Header Bar */}
         <div className="border-b border-cyan-500/30 pb-4 space-y-3 shrink-0">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <Cpu className="w-6 h-6 text-cyan-400 animate-pulse" />
               <div>
                 <h1 className="font-orbitron font-black text-lg sm:text-xl text-white tracking-widest text-glow-cyan">
-                  UEFI MULTIVERSE OS BOOT MANAGER
+                  SANTOSH MAURYA // MULTIVERSE PORTFOLIO OS
                 </h1>
-                <p className="text-xs text-cyan-400/80 font-tech">SANTOSH MAURYA ARCHITECTURE // 7 DEDICATED OS ENGINES</p>
+                <p className="text-xs text-cyan-400/80 font-tech">SELECT AN INTERACTIVE OS DESKTOP MODE TO EXPLORE MY PORTFOLIO</p>
               </div>
             </div>
 
@@ -136,12 +136,12 @@ export const LoginPortalScreen: React.FC = () => {
               </div>
 
               <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded bg-black/80 border border-emerald-500/30 text-emerald-400 text-xs font-tech">
-                <HardDrive className="w-3.5 h-3.5" /> ONLINE
+                <HardDrive className="w-3.5 h-3.5" /> PORTFOLIO READY
               </span>
             </div>
           </div>
 
-          {/* Operator Profile Badge & Telemetry Bar */}
+          {/* Developer Dossier Badge */}
           <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-black/80 border border-cyan-500/30">
             <div className="flex items-center gap-3">
               <img
@@ -151,18 +151,18 @@ export const LoginPortalScreen: React.FC = () => {
               />
               <div>
                 <div className="font-orbitron font-bold text-xs text-white flex items-center gap-2">
-                  SANTOSH MAURYA <span className="text-[10px] text-cyan-400 font-tech px-1.5 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 font-bold">GRAD 2025</span>
+                  SANTOSH MAURYA <span className="text-[10px] text-cyan-400 font-tech px-1.5 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 font-bold">B.E. IT 2025</span>
                 </div>
-                <div className="text-[11px] text-slate-400 font-tech">Software Support Engineer & FullStack Developer</div>
+                <div className="text-[11px] text-slate-400 font-tech">Software Support Engineer @Nevitech & FullStack Developer</div>
               </div>
             </div>
 
             <div className="flex items-center gap-4 text-[10px] font-tech text-slate-400 shrink-0">
               <span className="flex items-center gap-1 text-cyan-300">
-                <Activity className="w-3 h-3 text-cyan-400 animate-pulse" /> CPU: 38°C
+                <Activity className="w-3 h-3 text-cyan-400 animate-pulse" /> STACK: REACT 19 · TYPESCRIPT
               </span>
-              <span>RAM: 64GB HBM3</span>
-              <span className="text-emerald-400 font-bold">NEURAL LINK: 100%</span>
+              <span>TAILWIND CSS</span>
+              <span className="text-emerald-400 font-bold">LIVE PRODUCTION</span>
             </div>
           </div>
         </div>
@@ -171,13 +171,13 @@ export const LoginPortalScreen: React.FC = () => {
         <div className="space-y-4 flex-1">
           <div className="flex items-center justify-between text-xs font-orbitron text-cyan-300">
             <span className="flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-cyan-400" /> SELECT TARGET OPERATING SYSTEM:
+              <Terminal className="w-3.5 h-3.5 text-cyan-400" /> SELECT INTERFACE MODE:
             </span>
-            <span className="text-[10px] text-slate-400 font-tech">ACTIVE: {selectedOpt.title}</span>
+            <span className="text-[10px] text-slate-400 font-tech">SELECTED: {selectedOpt.title}</span>
           </div>
 
           {viewMode === 'grid' ? (
-            /* Interactive 3D OS Grid Cards */
+            /* Interactive OS Grid Cards */
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {INTERFACE_OPTIONS.map((opt) => {
                 const OptIcon = opt.icon;
@@ -291,12 +291,12 @@ export const LoginPortalScreen: React.FC = () => {
             onClick={() => handleBoot()}
             className="w-full py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-orbitron font-black text-sm tracking-widest shadow-[0_0_40px_rgba(0,240,255,0.9)] hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer group"
           >
-            <Power className="w-5 h-5 fill-black" /> BOOT {selectedOpt.title.toUpperCase()} <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Power className="w-5 h-5 fill-black" /> LAUNCH {selectedOpt.title.toUpperCase()} <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
           <div className="flex items-center justify-between text-[10px] font-tech text-slate-500 px-1">
-            <span>PRESS [ENTER] OR CLICK BUTTON TO LAUNCH</span>
-            <span>MULTIVERSE BOOTLOADER v3.0 // 7 OS MODES</span>
+            <span>PRESS [ENTER] OR CLICK BUTTON TO LAUNCH DESKTOP</span>
+            <span>PORTFOLIO SYSTEM v3.0 // SANTOSH MAURYA</span>
           </div>
         </div>
       </div>

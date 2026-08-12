@@ -133,10 +133,10 @@ export const MatrixRainAppRenderer: React.FC<Props> = ({ windowId }) => {
             <div key={i} className="p-3.5 rounded-xl bg-black/90 border border-emerald-500/40 space-y-2 text-xs font-tech">
               <div className="flex justify-between items-center text-emerald-300">
                 <span className="font-bold">&gt; {s.name}</span>
-                <span className="text-[10px] text-emerald-500">{s.addr} | {s.level}%</span>
+                <span className="text-[10px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40">{s.addr}</span>
               </div>
-              <div className="text-[11px] tracking-widest text-emerald-400">
-                [{'█'.repeat(Math.floor(s.level / 10))}{'░'.repeat(10 - Math.floor(s.level / 10))}]
+              <div className="text-[11px] tracking-widest text-emerald-400 font-mono font-bold">
+                [██████████ PROD_READY]
               </div>
             </div>
           ))}
