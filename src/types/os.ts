@@ -6,7 +6,8 @@ export type WindowId =
   | 'music' 
   | 'contact' 
   | 'game' 
-  | 'settings';
+  | 'settings'
+  | 'browser';
 
 export type OSTheme = 'cyberpunk' | 'synthwave' | 'matrix' | 'solar';
 

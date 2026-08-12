@@ -4,6 +4,7 @@ import { Terminal, Send, CheckCircle2, Cpu, FolderGit2, Briefcase, ExternalLink,
 import { TerminalApp } from '../../components/apps/TerminalApp';
 import { MusicApp } from '../../components/apps/MusicApp';
 import { GameApp } from '../../components/apps/GameApp';
+import { BrowserApp } from '../../components/apps/BrowserApp';
 import { getNevitechExperienceDuration, WORK_EXPERIENCE, PROJECTS_DATA } from '../../data/portfolio.data';
 
 interface Props {
@@ -263,12 +264,13 @@ export const MatrixRainAppRenderer: React.FC<Props> = ({ windowId }) => {
     );
   }
 
-  // Fallback for Terminal, Game, Music
+  // Fallback for Terminal, Game, Music, Browser
   return (
-    <div className="font-mono text-emerald-400 p-4">
+    <div className="h-full font-mono text-emerald-400">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}
+      {windowId === 'browser' && <BrowserApp />}
     </div>
   );
 };

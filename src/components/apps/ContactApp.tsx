@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { ExternalLink, MapPin, Send, Globe, Share2, Zap, Shield, Rocket, Cpu, CheckCircle2, Terminal, Music } from 'lucide-react';
+import { ExternalLink, MapPin, Send, Globe, Share2, Zap, Shield, Rocket, Cpu, CheckCircle2, Terminal, Music, Loader2, AlertCircle } from 'lucide-react';
 import { useOS } from '../../context/OSContext';
+import { SYSTEM_CONFIG } from '../../config/system.config';
 
 export const ContactApp: React.FC = () => {
   const { interfaceMode } = useOS();
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -79,16 +83,53 @@ export const ContactApp: React.FC = () => {
     { icon: Globe, label: 'GitHub Repositories', url: 'https://github.com/SantoshM5050' },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setName('');
-      setEmail('');
-      setMessage('');
-      setSubmitted(false);
-    }, 4000);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const accessKey = (import.meta.env.VITE_WEB3FORMS_KEY as string) || SYSTEM_CONFIG.web3formsKey || '';
+
+    try {
+      if (accessKey) {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name,
+            email,
+            message,
+            subject: `🚀 Portfolio Transmission from ${name}`,
+            from_name: `${name} (Portfolio Operator)`,
+          }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          setSubmitted(true);
+          setName('');
+          setEmail('');
+          setMessage('');
+        } else {
+          throw new Error(data.message || 'Transmission dispatch failed');
+        }
+      } else {
+        // Mock fallback if access key isn't provided yet
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+        setMessage('');
+      }
+    } catch (err: any) {
+      setErrorMessage(err.message || 'Transmission failed. Please check internet connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -156,11 +197,27 @@ export const ContactApp: React.FC = () => {
                 ></textarea>
               </div>
 
+              {errorMessage && (
+                <div className="p-2.5 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 text-xs flex items-center gap-2 font-tech">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <button 
                 type="submit"
-                className={`py-3 px-4 rounded-xl border text-xs font-orbitron transition-all flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
+                disabled={isSubmitting}
+                className={`py-3 px-4 rounded-xl border text-xs font-orbitron transition-all flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle} ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
               >
-                <Send className="w-4 h-4" /> TRANSMIT MESSAGE
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" /> TRANSMITTING...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" /> TRANSMIT MESSAGE
+                  </>
+                )}
               </button>
             </form>
           )}

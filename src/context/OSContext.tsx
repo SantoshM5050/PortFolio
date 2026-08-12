@@ -127,6 +127,18 @@ const INITIAL_WINDOWS: WindowState[] = [
     size: { width: 500, height: 420 },
     minSize: { width: 400, height: 320 },
   },
+  {
+    id: 'browser',
+    title: 'cyber_browser.exe',
+    icon: 'Globe',
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: 12,
+    position: { x: 120, y: 75 },
+    size: { width: 850, height: 560 },
+    minSize: { width: 450, height: 350 },
+  },
 ];
 
 const OSContext = createContext<OSContextType | undefined>(undefined);

@@ -7,6 +7,7 @@ import { SkillsApp } from '../../components/apps/SkillsApp';
 import { MusicApp } from '../../components/apps/MusicApp';
 import { ContactApp } from '../../components/apps/ContactApp';
 import { GameApp } from '../../components/apps/GameApp';
+import { BrowserApp } from '../../components/apps/BrowserApp';
 
 interface Props {
   windowId: WindowId;
@@ -22,6 +23,7 @@ export const CyberOSAppRenderer: React.FC<Props> = ({ windowId }) => {
       {windowId === 'music' && <MusicApp />}
       {windowId === 'contact' && <ContactApp />}
       {windowId === 'game' && <GameApp />}
+      {windowId === 'browser' && <BrowserApp />}
     </div>
   );
 };

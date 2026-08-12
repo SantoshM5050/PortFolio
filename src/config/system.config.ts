@@ -24,4 +24,5 @@ export const SYSTEM_CONFIG = {
     mode: 'cyberos_interface_mode',
     loggedIn: 'cyberos_logged_in',
   },
+  web3formsKey: '', // Enter Web3Forms access_key here or in VITE_WEB3FORMS_KEY env variable
 };

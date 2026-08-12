@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import type { WindowId } from '../../types/os';
-import { Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Activity, ShieldCheck, Wifi, Clock, Power } from 'lucide-react';
+import { Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Activity, ShieldCheck, Wifi, Clock, Power, Globe, Maximize2 } from 'lucide-react';
 import { WindowFrame } from './WindowFrame';
 import { CyberOSAppRenderer } from '../../systems/cyberos/CyberOSAppRenderer';
 
@@ -13,6 +13,7 @@ const DESKTOP_ICONS: { id: WindowId; label: string; icon: React.ElementType; tag
   { id: 'music', label: 'music.exe', icon: Music, tag: 'LO-FI' },
   { id: 'contact', label: 'contact.exe', icon: Send, tag: 'NODE' },
   { id: 'game', label: 'game.exe', icon: Gamepad2, tag: 'ARCADE' },
+  { id: 'browser', label: 'browser.exe', icon: Globe, tag: 'WEB' },
 ];
 
 export const Desktop: React.FC = () => {
@@ -104,11 +105,27 @@ export const Desktop: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 font-tech">
             <Clock className="w-3.5 h-3.5 text-cyan-400" />
             <span>{time || '12:00:00 AM'}</span>
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+              } else if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+              }
+            }}
+            className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/60 hover:bg-cyan-900 border border-cyan-500/40 text-cyan-300 font-orbitron text-xs tracking-wider transition-all cursor-pointer shadow-[0_0_10px_rgba(0,240,255,0.2)] hover:scale-105 pointer-events-auto"
+            title="Toggle Fullscreen Mode (F11)"
+          >
+            <Maximize2 className="w-3.5 h-3.5 text-cyan-400" />
+            <span>FULLSCREEN</span>
+          </button>
 
           {/* Reboot Button */}
           <button

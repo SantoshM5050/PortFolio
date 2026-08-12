@@ -4,6 +4,7 @@ import { User, Briefcase, GraduationCap, Code, Server, CheckCircle2, Award, Fold
 import { TerminalApp } from '../../components/apps/TerminalApp';
 import { MusicApp } from '../../components/apps/MusicApp';
 import { GameApp } from '../../components/apps/GameApp';
+import { BrowserApp } from '../../components/apps/BrowserApp';
 import { getNevitechExperienceDuration, WORK_EXPERIENCE, EDUCATION_DATA, PORTFOLIO_BIO, PROJECTS_DATA, SKILLS_DATA } from '../../data/portfolio.data';
 
 interface Props {
@@ -297,10 +298,11 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
 
   // Fallback
   return (
-    <div className="font-mono text-slate-200 p-4">
+    <div className="h-full font-mono text-slate-200">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}
+      {windowId === 'browser' && <BrowserApp />}
     </div>
   );
 };

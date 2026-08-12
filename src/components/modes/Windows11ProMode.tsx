@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import { Windows11AppRenderer } from '../../systems/windows_11/Windows11AppRenderer';
 import type { WindowId } from '../../types/os';
@@ -18,7 +18,8 @@ import {
   Wifi, 
   Volume2, 
   Battery, 
-  LayoutGrid
+  LayoutGrid,
+  Globe
 } from 'lucide-react';
 
 export const Windows11ProMode: React.FC = () => {
@@ -30,11 +31,61 @@ export const Windows11ProMode: React.FC = () => {
     minimizeWindow, 
     maximizeWindow, 
     openWindow, 
-    rebootToLogin 
+    rebootToLogin,
+    updateWindowPosition,
   } = useOS();
 
   const [startMenuOpen, setStartMenuOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const [draggingWindowId, setDraggingWindowId] = useState<WindowId | null>(null);
+  const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const windowPosStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  const handleDragStart = (winId: WindowId, isMaximized: boolean, e: React.MouseEvent | React.TouchEvent) => {
+    if (isMaximized) return;
+    focusWindow(winId);
+    setDraggingWindowId(winId);
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    dragStartRef.current = { x: clientX, y: clientY };
+    const win = windows.find((w) => w.id === winId);
+    if (win) {
+      windowPosStartRef.current = { ...win.position };
+    }
+  };
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent | TouchEvent) => {
+      if (draggingWindowId) {
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+        const dx = clientX - dragStartRef.current.x;
+        const dy = clientY - dragStartRef.current.y;
+        const newX = Math.max(0, windowPosStartRef.current.x + dx);
+        const newY = Math.max(55, windowPosStartRef.current.y + dy);
+        updateWindowPosition(draggingWindowId, { x: newX, y: newY });
+      }
+    };
+
+    const handleEnd = () => {
+      setDraggingWindowId(null);
+    };
+
+    if (draggingWindowId) {
+      window.addEventListener('mousemove', handleMove);
+      window.addEventListener('mouseup', handleEnd);
+      window.addEventListener('touchmove', handleMove);
+      window.addEventListener('touchend', handleEnd);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mouseup', handleEnd);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchend', handleEnd);
+    };
+  }, [draggingWindowId, updateWindowPosition]);
 
   const appIcons: { id: WindowId; label: string; icon: React.ElementType; color: string }[] = [
     { id: 'about', label: 'About Me', icon: User, color: 'from-blue-500 to-indigo-600' },
@@ -44,6 +95,7 @@ export const Windows11ProMode: React.FC = () => {
     { id: 'terminal', label: 'Terminal', icon: TerminalIcon, color: 'from-slate-700 to-slate-900' },
     { id: 'game', label: 'Arcade', icon: Gamepad2, color: 'from-pink-500 to-rose-600' },
     { id: 'music', label: 'Synth Radio', icon: Radio, color: 'from-amber-500 to-orange-600' },
+    { id: 'browser', label: 'Web Browser', icon: Globe, color: 'from-blue-600 to-cyan-500' },
   ];
 
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -70,18 +122,36 @@ export const Windows11ProMode: React.FC = () => {
           </span>
         </div>
 
-        {/* Reboot Button */}
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            rebootToLogin();
-          }}
-          className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/80 hover:bg-red-900 border border-red-500/60 text-red-300 text-xs font-semibold transition-all cursor-pointer shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:scale-105 pointer-events-auto"
-        >
-          <Power className="w-3.5 h-3.5 text-red-400 animate-pulse" />
-          <span>REBOOT / SWITCH OS</span>
-        </button>
+        {/* Top Header Controls (Fullscreen + Reboot) */}
+        <div className="flex items-center gap-2 pointer-events-auto">
+          <button
+            type="button"
+            onClick={() => {
+              if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+              } else if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+              }
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 hover:bg-slate-800 border border-white/10 text-slate-300 text-xs font-semibold transition-all cursor-pointer shadow-md"
+            title="Toggle Fullscreen Mode (F11)"
+          >
+            <Square className="w-3.5 h-3.5 text-blue-400" />
+            <span>FULLSCREEN</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              rebootToLogin();
+            }}
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/80 hover:bg-red-900 border border-red-500/60 text-red-300 text-xs font-semibold transition-all cursor-pointer shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:scale-105"
+          >
+            <Power className="w-3.5 h-3.5 text-red-400 animate-pulse" />
+            <span>REBOOT / SWITCH OS</span>
+          </button>
+        </div>
       </div>
 
       {/* Desktop Workspace Grid Shortcuts */}
@@ -114,21 +184,26 @@ export const Windows11ProMode: React.FC = () => {
               key={win.id}
               onClick={() => focusWindow(win.id)}
               style={{
-                top: win.isMaximized ? '52px' : `${Math.max(win.position.y, 80)}px`,
+                top: win.isMaximized ? '48px' : `${Math.max(win.position.y, 80)}px`,
                 left: win.isMaximized ? '0px' : `${win.position.x}px`,
                 width: win.isMaximized ? '100%' : `${win.size.width}px`,
-                height: win.isMaximized ? 'calc(100vh - 120px)' : `${win.size.height}px`,
+                height: win.isMaximized ? 'calc(100vh - 105px)' : `${win.size.height}px`,
                 zIndex: win.zIndex,
                 display: win.isMinimized ? 'none' : 'flex',
               }}
-              className={`absolute flex-col rounded-2xl border backdrop-blur-2xl shadow-2xl transition-all pointer-events-auto overflow-hidden ${
+              className={`absolute flex-col ${win.isMaximized ? 'rounded-none border-t-0' : 'rounded-2xl border'} backdrop-blur-2xl shadow-2xl transition-all pointer-events-auto overflow-hidden ${
                 isActive
                   ? 'bg-slate-900/90 border-blue-500/50 shadow-[0_0_40px_rgba(59,130,246,0.3)]'
                   : 'bg-slate-950/80 border-white/10 shadow-lg'
               }`}
             >
               {/* Windows 11 Title Bar */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-950/70 border-b border-white/10 select-none cursor-move">
+              <div
+                onMouseDown={(e) => handleDragStart(win.id, win.isMaximized, e)}
+                onTouchStart={(e) => handleDragStart(win.id, win.isMaximized, e)}
+                onDoubleClick={() => maximizeWindow(win.id)}
+                className="flex items-center justify-between px-4 py-3 bg-slate-950/70 border-b border-white/10 select-none cursor-move"
+              >
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-blue-500" />
                   <span className="text-xs font-bold text-slate-200 tracking-tight">{win.title}</span>

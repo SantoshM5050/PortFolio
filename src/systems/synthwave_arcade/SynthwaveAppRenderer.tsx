@@ -4,6 +4,7 @@ import { CheckCircle2, Trophy, Disc, Radio, Briefcase, ExternalLink, Globe } fro
 import { TerminalApp } from '../../components/apps/TerminalApp';
 import { MusicApp } from '../../components/apps/MusicApp';
 import { GameApp } from '../../components/apps/GameApp';
+import { BrowserApp } from '../../components/apps/BrowserApp';
 import { getNevitechExperienceDuration, WORK_EXPERIENCE, PROJECTS_DATA } from '../../data/portfolio.data';
 
 interface Props {
@@ -244,10 +245,11 @@ export const SynthwaveAppRenderer: React.FC<Props> = ({ windowId }) => {
 
   // Fallback
   return (
-    <div className="font-mono text-pink-400 p-4">
+    <div className="h-full font-mono text-pink-400">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}
+      {windowId === 'browser' && <BrowserApp />}
     </div>
   );
 };

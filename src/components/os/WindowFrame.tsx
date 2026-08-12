@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import type { WindowState } from '../../types/os';
 
-import { Minus, Square, Copy, X, Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, Shield } from 'lucide-react';
+import { Minus, Square, Copy, X, Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, Shield, Globe } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ElementType> = {
   User,
@@ -13,6 +13,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Send,
   Gamepad2,
   Settings,
+  Globe,
 };
 
 interface WindowFrameProps {
@@ -132,7 +133,7 @@ export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children 
         top: '52px',
         left: 0,
         width: '100vw',
-        height: 'calc(100vh - 105px)',
+        height: 'calc(100vh - 54px)',
         zIndex: windowState.zIndex,
       }
     : {
@@ -148,12 +149,13 @@ export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children 
     <div
       onClick={() => focusWindow(windowState.id)}
       style={style}
-      className={`cyber-glass pointer-events-auto flex flex-col rounded-lg border overflow-hidden transition-shadow duration-200 select-none ${themeBorderClasses}`}
+      className={`cyber-glass pointer-events-auto flex flex-col ${windowState.isMaximized ? 'rounded-none border-t-0' : 'rounded-lg border'} overflow-hidden transition-shadow duration-200 select-none ${themeBorderClasses}`}
     >
       {/* Titlebar Header */}
       <div
         onMouseDown={handleTitleStart}
         onTouchStart={handleTitleStart}
+        onDoubleClick={() => maximizeWindow(windowState.id)}
         className={`flex items-center justify-between px-3 py-2 border-b border-white/10 cursor-move ${themeHeaderClasses}`}
       >
         {/* Left Info */}
