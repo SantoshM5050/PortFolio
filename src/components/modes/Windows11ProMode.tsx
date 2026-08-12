@@ -156,20 +156,20 @@ export const Windows11ProMode: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop Workspace Grid Shortcuts */}
-      <div className="absolute top-16 left-6 z-10 grid grid-cols-1 gap-4 select-none">
-        {appIcons.slice(0, 4).map((app) => {
+      {/* Desktop Workspace Grid Shortcuts (All Apps) */}
+      <div className="absolute top-16 left-6 z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-[calc(100vh-120px)] overflow-y-auto pr-2 select-none">
+        {appIcons.map((app) => {
           const Icon = app.icon;
           return (
             <button
               key={app.id}
               onClick={() => openWindow(app.id)}
-              className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-white/10 transition-all cursor-pointer group text-center w-24"
+              className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-white/10 transition-all cursor-pointer group text-center w-24"
             >
-              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${app.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>
-                <Icon className="w-6 h-6" />
+              <div className={`w-11 h-11 rounded-2xl bg-gradient-to-tr ${app.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                <Icon className="w-5.5 h-5.5" />
               </div>
-              <span className="text-xs text-slate-200 font-medium drop-shadow">{app.label}</span>
+              <span className="text-[11px] text-slate-200 font-medium drop-shadow truncate w-full">{app.label}</span>
             </button>
           );
         })}
@@ -254,7 +254,13 @@ export const Windows11ProMode: React.FC = () => {
 
       {/* Windows 12 Popover Start Menu */}
       {startMenuOpen && (
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-[120] w-[540px] max-w-[92vw] bg-slate-900/90 border border-white/20 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_0_50px_rgba(0,0,0,0.8)] space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <>
+          {/* Backdrop overlay to close start menu when clicking outside */}
+          <div
+            onClick={() => setStartMenuOpen(false)}
+            className="fixed inset-0 z-[115] bg-black/20"
+          />
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-[120] w-[540px] max-w-[92vw] bg-slate-900/90 border border-white/20 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_0_50px_rgba(0,0,0,0.8)] space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-200">
           {/* Windows 11 Search Input */}
           <div className="relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -323,6 +329,7 @@ export const Windows11ProMode: React.FC = () => {
             </button>
           </div>
         </div>
+      </>
       )}
 
       {/* Windows 11 Centered Taskbar */}

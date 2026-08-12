@@ -23,7 +23,13 @@ export const StartMenu: React.FC = () => {
   if (!startMenuOpen) return null;
 
   return (
-    <div className="fixed bottom-14 left-3 z-[9999] w-[94vw] sm:w-[480px] cyber-glass rounded-xl border border-cyan-500/40 p-4 shadow-[0_10px_40px_rgba(0,0,0,0.8)] font-sans select-none animate-in fade-in slide-in-from-bottom-3 duration-200">
+    <>
+      {/* Click outside backdrop to auto-close Start Menu */}
+      <div
+        onClick={closeStartMenu}
+        className="fixed inset-0 z-[9998] bg-black/20"
+      />
+      <div className="fixed bottom-14 left-3 z-[9999] w-[94vw] sm:w-[480px] cyber-glass rounded-xl border border-cyan-500/40 p-4 shadow-[0_10px_40px_rgba(0,0,0,0.8)] font-sans select-none animate-in fade-in slide-in-from-bottom-3 duration-200">
       {/* Header Profile Info */}
       <div className="flex items-center gap-3.5 p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/20 mb-4">
         <div className="relative">
@@ -126,5 +132,6 @@ export const StartMenu: React.FC = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
