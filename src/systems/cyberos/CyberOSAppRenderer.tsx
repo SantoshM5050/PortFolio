@@ -8,6 +8,7 @@ import { MusicApp } from '../../components/apps/MusicApp';
 import { ContactApp } from '../../components/apps/ContactApp';
 import { GameApp } from '../../components/apps/GameApp';
 import { BrowserApp } from '../../components/apps/BrowserApp';
+import { CodeLabApp } from '../../components/apps/CodeLabApp';
 
 interface Props {
   windowId: WindowId;
@@ -15,7 +16,7 @@ interface Props {
 
 export const CyberOSAppRenderer: React.FC<Props> = ({ windowId }) => {
   return (
-    <div className="cyberos-universe-container text-cyan-300 font-mono">
+    <div className="cyberos-universe-container text-cyan-300 font-mono h-full flex flex-col">
       {windowId === 'about' && <AboutApp />}
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'projects' && <ProjectsApp />}
@@ -24,6 +25,7 @@ export const CyberOSAppRenderer: React.FC<Props> = ({ windowId }) => {
       {windowId === 'contact' && <ContactApp />}
       {windowId === 'game' && <GameApp />}
       {windowId === 'browser' && <BrowserApp />}
+      {windowId === 'code_lab' && <CodeLabApp />}
     </div>
   );
 };

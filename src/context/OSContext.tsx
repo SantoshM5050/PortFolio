@@ -139,6 +139,18 @@ const INITIAL_WINDOWS: WindowState[] = [
     size: { width: 850, height: 560 },
     minSize: { width: 450, height: 350 },
   },
+  {
+    id: 'code_lab',
+    title: 'code_lab.exe',
+    icon: 'Code',
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: 13,
+    position: { x: 140, y: 80 },
+    size: { width: 900, height: 580 },
+    minSize: { width: 500, height: 400 },
+  },
 ];
 
 const OSContext = createContext<OSContextType | undefined>(undefined);

@@ -5,6 +5,7 @@ import { TerminalApp } from '../../components/apps/TerminalApp';
 import { MusicApp } from '../../components/apps/MusicApp';
 import { GameApp } from '../../components/apps/GameApp';
 import { BrowserApp } from '../../components/apps/BrowserApp';
+import { CodeLabApp } from '../../components/apps/CodeLabApp';
 import { getNevitechExperienceDuration, WORK_EXPERIENCE, PROJECTS_DATA } from '../../data/portfolio.data';
 
 interface Props {
@@ -264,13 +265,14 @@ export const MatrixRainAppRenderer: React.FC<Props> = ({ windowId }) => {
     );
   }
 
-  // Fallback for Terminal, Game, Music, Browser
+  // Fallback for Terminal, Game, Music, Browser, CodeLab
   return (
     <div className="h-full font-mono text-emerald-400">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}
       {windowId === 'browser' && <BrowserApp />}
+      {windowId === 'code_lab' && <CodeLabApp />}
     </div>
   );
 };

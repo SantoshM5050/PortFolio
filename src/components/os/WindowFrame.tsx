@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import type { WindowState } from '../../types/os';
 
-import { Minus, Square, Copy, X, Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, Shield, Globe } from 'lucide-react';
+import { Minus, Square, Copy, X, Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, Shield, Globe, Code } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ElementType> = {
   User,
@@ -14,6 +14,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Gamepad2,
   Settings,
   Globe,
+  Code,
 };
 
 interface WindowFrameProps {

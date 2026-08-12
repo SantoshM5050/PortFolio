@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 import type { WindowId } from '../../types/os';
-import { Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Activity, ShieldCheck, Wifi, Clock, Power, Globe, Maximize2 } from 'lucide-react';
+import { Terminal, User, FolderGit2, Cpu, Music, Send, Gamepad2, Activity, ShieldCheck, Wifi, Clock, Power, Globe, Maximize2, Code } from 'lucide-react';
 import { WindowFrame } from './WindowFrame';
 import { CyberOSAppRenderer } from '../../systems/cyberos/CyberOSAppRenderer';
 
@@ -10,6 +10,7 @@ const DESKTOP_ICONS: { id: WindowId; label: string; icon: React.ElementType; tag
   { id: 'terminal', label: 'terminal.exe', icon: Terminal, tag: 'CLI' },
   { id: 'projects', label: 'projects.exe', icon: FolderGit2, tag: 'VAULT' },
   { id: 'skills', label: 'skills.exe', icon: Cpu, tag: 'MATRIX' },
+  { id: 'code_lab', label: 'code_lab.exe', icon: Code, tag: 'IDE' },
   { id: 'music', label: 'music.exe', icon: Music, tag: 'LO-FI' },
   { id: 'contact', label: 'contact.exe', icon: Send, tag: 'NODE' },
   { id: 'game', label: 'game.exe', icon: Gamepad2, tag: 'ARCADE' },

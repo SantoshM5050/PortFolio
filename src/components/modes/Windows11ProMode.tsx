@@ -19,7 +19,8 @@ import {
   Volume2, 
   Battery, 
   LayoutGrid,
-  Globe
+  Globe,
+  Code
 } from 'lucide-react';
 
 export const Windows11ProMode: React.FC = () => {
@@ -96,6 +97,7 @@ export const Windows11ProMode: React.FC = () => {
     { id: 'game', label: 'Arcade', icon: Gamepad2, color: 'from-pink-500 to-rose-600' },
     { id: 'music', label: 'Synth Radio', icon: Radio, color: 'from-amber-500 to-orange-600' },
     { id: 'browser', label: 'Web Browser', icon: Globe, color: 'from-blue-600 to-cyan-500' },
+    { id: 'code_lab', label: 'Code Lab', icon: Code, color: 'from-cyan-600 to-indigo-600' },
   ];
 
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });

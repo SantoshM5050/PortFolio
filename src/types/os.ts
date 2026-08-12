@@ -7,7 +7,8 @@ export type WindowId =
   | 'contact' 
   | 'game' 
   | 'settings'
-  | 'browser';
+  | 'browser'
+  | 'code_lab';
 
 export type OSTheme = 'cyberpunk' | 'synthwave' | 'matrix' | 'solar';
 

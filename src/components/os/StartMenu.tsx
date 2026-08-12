@@ -1,7 +1,7 @@
 import React from 'react';
 import { useOS } from '../../context/OSContext';
 import type { WindowId } from '../../types/os';
-import { User, Terminal, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, RefreshCw, Sparkles, Activity, ShieldCheck, Globe } from 'lucide-react';
+import { User, Terminal, FolderGit2, Cpu, Music, Send, Gamepad2, Settings, RefreshCw, Sparkles, Activity, ShieldCheck, Globe, Code } from 'lucide-react';
 
 
 const APPS: { id: WindowId; title: string; name: string; icon: React.ElementType; desc: string; badge?: string }[] = [
@@ -9,6 +9,7 @@ const APPS: { id: WindowId; title: string; name: string; icon: React.ElementType
   { id: 'terminal', title: 'cyber_terminal.exe', name: 'Cyber Terminal', icon: Terminal, desc: 'Command CLI for secret commands & system stats', badge: 'CLI' },
   { id: 'projects', title: 'project_vault.exe', name: 'Project Vault', icon: FolderGit2, desc: 'Curated gallery of apps, bots & platforms', badge: 'HOT' },
   { id: 'skills', title: 'skill_matrix.sys', name: 'Skill Arsenal', icon: Cpu, desc: 'Technical stack ratings & node graph' },
+  { id: 'code_lab', title: 'code_lab.exe', name: 'Code Lab IDE', icon: Code, desc: 'VS-Code style architecture explorer & code snippets', badge: 'IDE' },
   { id: 'music', title: 'synth_radio.exe', name: 'Lo-Fi Synth Radio', icon: Music, desc: 'Ambient tracks with audio spectrum visualizer' },
   { id: 'contact', title: 'transmission_hub.exe', name: 'Contact Hub', icon: Send, desc: 'Encrypted message transmission & socials' },
   { id: 'game', title: 'cyber_arcade.exe', name: 'Cyber Arcade', icon: Gamepad2, desc: 'Retro arcade mini-game challenge', badge: 'MINI-GAME' },
