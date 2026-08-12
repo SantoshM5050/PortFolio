@@ -158,19 +158,13 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {cat.skills.map((s, i) => (
-                  <div key={i} className="p-3.5 rounded-xl bg-slate-900/60 border border-white/10 space-y-2">
-                    <div className="flex justify-between items-center text-xs font-medium">
-                      <span className="text-slate-200 font-bold">{s.name}</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-md bg-blue-950 text-blue-300 border border-blue-500/40 font-mono font-bold tracking-wider">
-                        {s.status || 'PROD READY'}
-                      </span>
+                  <div key={i} className="p-3.5 rounded-xl bg-slate-900/60 border border-white/10 space-y-2.5">
+                    <div className="flex items-center gap-2 text-xs font-medium">
+                      <span className="w-2 h-2 rounded-full bg-blue-400 shrink-0" />
+                      <span className="text-slate-100 font-bold">{s.name}</span>
                     </div>
                     <div className="w-full h-1.5 rounded-full bg-slate-950 overflow-hidden border border-white/10">
                       <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.6)] w-full" />
-                    </div>
-                    <div className="text-[10px] text-slate-400 flex justify-between font-mono pt-0.5">
-                      <span>Status</span>
-                      <span className="text-emerald-400 font-bold">VERIFIED</span>
                     </div>
                   </div>
                 ))}

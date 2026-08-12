@@ -4,30 +4,29 @@ import { Cpu, Zap, Shield, Rocket, Terminal, Music } from 'lucide-react';
 
 interface SkillItem {
   name: string;
-  status: string;
   category: 'Frontend' | 'Backend' | 'Database / Cloud' | 'Tools & AI';
 }
 
 const SKILLS_DATA: SkillItem[] = [
-  { name: 'TypeScript / JavaScript (ESNext)', status: 'PROD READY', category: 'Frontend' },
-  { name: 'React 18 / 19 & Next.js 15', status: 'PROD READY', category: 'Frontend' },
-  { name: 'Tailwind CSS & CSS Modules', status: 'ADVANCED', category: 'Frontend' },
-  { name: 'HTML5 Canvas & WebGL Animations', status: 'ADVANCED', category: 'Frontend' },
-  { name: 'Framer Motion & Modern Web UI', status: 'ADVANCED', category: 'Frontend' },
+  { name: 'TypeScript / JavaScript (ESNext)', category: 'Frontend' },
+  { name: 'React 18 / 19 & Next.js 15', category: 'Frontend' },
+  { name: 'Tailwind CSS & CSS Modules', category: 'Frontend' },
+  { name: 'HTML5 Canvas & WebGL Animations', category: 'Frontend' },
+  { name: 'Framer Motion & Modern Web UI', category: 'Frontend' },
 
-  { name: 'Node.js & Express / NestJS', status: 'PROD READY', category: 'Backend' },
-  { name: 'REST APIs & GraphQL Services', status: 'PROD READY', category: 'Backend' },
-  { name: 'Discord.js & SaaS Bot Engines', status: 'EXPERT', category: 'Backend' },
-  { name: 'Python & FastAPI', status: 'PROFICIENT', category: 'Backend' },
+  { name: 'Node.js & Express / NestJS', category: 'Backend' },
+  { name: 'REST APIs & GraphQL Services', category: 'Backend' },
+  { name: 'Discord.js & SaaS Bot Engines', category: 'Backend' },
+  { name: 'Python & FastAPI', category: 'Backend' },
 
-  { name: 'PostgreSQL & Prisma ORM', status: 'PROD READY', category: 'Database / Cloud' },
-  { name: 'MongoDB & Mongoose Schema', status: 'PROD READY', category: 'Database / Cloud' },
-  { name: 'Docker & Containerization', status: 'ADVANCED', category: 'Database / Cloud' },
-  { name: 'Google Cloud GCP & Vercel', status: 'PROD READY', category: 'Database / Cloud' },
+  { name: 'PostgreSQL & Prisma ORM', category: 'Database / Cloud' },
+  { name: 'MongoDB & Mongoose Schema', category: 'Database / Cloud' },
+  { name: 'Docker & Containerization', category: 'Database / Cloud' },
+  { name: 'Google Cloud GCP & Vercel', category: 'Database / Cloud' },
 
-  { name: 'Gemini AI API & OpenAI SDK', status: 'ADVANCED', category: 'Tools & AI' },
-  { name: 'Git, GitHub & CI/CD Pipelines', status: 'PROD READY', category: 'Tools & AI' },
-  { name: 'Vite & Webpack Tooling', status: 'PROD READY', category: 'Tools & AI' },
+  { name: 'Gemini AI API & OpenAI SDK', category: 'Tools & AI' },
+  { name: 'Git, GitHub & CI/CD Pipelines', category: 'Tools & AI' },
+  { name: 'Vite & Webpack Tooling', category: 'Tools & AI' },
 ];
 
 export const SkillsApp: React.FC = () => {
@@ -144,7 +143,7 @@ export const SkillsApp: React.FC = () => {
             NODES: {SKILLS_DATA.length}
           </span>
           <span className={`px-2.5 py-1 rounded-full bg-black/80 border border-white/10 font-bold ${theme.textColor}`}>
-            CORE STACK
+            TECHNICAL SKILLS
           </span>
         </div>
       </div>
@@ -166,27 +165,20 @@ export const SkillsApp: React.FC = () => {
         ))}
       </div>
 
-      {/* Skills Cards Grid */}
+      {/* Clean Minimalist Skills Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredSkills.map((skill, index) => (
           <div
             key={index}
-            className={`p-4 rounded-2xl bg-black/70 border ${theme.cardBorder} transition-all duration-300 space-y-2`}
+            className={`p-4 rounded-2xl bg-black/70 border ${theme.cardBorder} transition-all duration-300 space-y-2.5`}
           >
-            <div className="flex justify-between items-center text-xs">
-              <div className="flex items-center gap-2">
-                <span className={`w-2 h-2 rounded-full ${theme.dotColor} animate-ping`}></span>
-                <span className="font-orbitron font-bold text-slate-100">{skill.name}</span>
-              </div>
-              <div className="flex items-center gap-2 font-tech">
-                <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono bg-black/80 border border-white/10 ${theme.textColor}`}>
-                  {skill.status}
-                </span>
-              </div>
+            <div className="flex items-center gap-2 text-xs">
+              <span className={`w-2 h-2 rounded-full ${theme.dotColor} shrink-0`}></span>
+              <span className="font-orbitron font-bold text-slate-100">{skill.name}</span>
             </div>
 
-            {/* Glowing Accent Indicator Bar */}
-            <div className="w-full h-2 rounded-full bg-black p-0.5 border border-white/10 overflow-hidden">
+            {/* Subtle Glowing Accent Bar */}
+            <div className="w-full h-1.5 rounded-full bg-black border border-white/10 overflow-hidden">
               <div className={`h-full bg-gradient-to-r ${theme.meterGradient} rounded-full w-full`} />
             </div>
           </div>

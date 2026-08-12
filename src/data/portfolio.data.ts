@@ -120,28 +120,28 @@ export const SKILLS_DATA: SkillCategory[] = [
   {
     name: 'Software Engineering & Web Core',
     skills: [
-      { name: 'JavaScript (ESNext) / TypeScript', status: 'PROD READY', level: 100 },
-      { name: 'React 19 / Next.js', status: 'PROD READY', level: 100 },
-      { name: 'HTML5 / Tailwind CSS / Glassmorphism', status: 'ADVANCED', level: 100 },
-      { name: 'Node.js / Express.js', status: 'PROD READY', level: 100 },
+      { name: 'JavaScript (ESNext) / TypeScript' },
+      { name: 'React 19 / Next.js' },
+      { name: 'HTML5 / Tailwind CSS / Glassmorphism' },
+      { name: 'Node.js / Express.js' },
     ],
   },
   {
     name: 'Computer Science Fundamentals & DBMS',
     skills: [
-      { name: 'Data Structures & Algorithms (DSA)', status: 'PROFICIENT', level: 100 },
-      { name: 'Database Management Systems (DBMS)', status: 'PROD READY', level: 100 },
-      { name: 'Computer Networks & Web Security', status: 'CORE STACK', level: 100 },
-      { name: 'Software Development Lifecycle (SDLC)', status: 'ADVANCED', level: 100 },
+      { name: 'Data Structures & Algorithms (DSA)' },
+      { name: 'Database Management Systems (DBMS)' },
+      { name: 'Computer Networks & Web Security' },
+      { name: 'Software Development Lifecycle (SDLC)' },
     ],
   },
   {
     name: 'Support Engineering, Tools & Cloud',
     skills: [
-      { name: 'Software Support & NCampus CMS', status: 'EXPERT', level: 100 },
-      { name: 'Git / GitHub Version Control', status: 'PROD READY', level: 100 },
-      { name: 'Python & FastAPI', status: 'PROFICIENT', level: 100 },
-      { name: 'Vite / Docker / Cloud Deployment', status: 'ADVANCED', level: 100 },
+      { name: 'Software Support & NCampus CMS' },
+      { name: 'Git / GitHub Version Control' },
+      { name: 'Python & FastAPI' },
+      { name: 'Vite / Docker / Cloud Deployment' },
     ],
   },
 ];
