@@ -5,30 +5,29 @@ import { Cpu, Zap, Shield, Rocket, Terminal, Music } from 'lucide-react';
 interface SkillItem {
   name: string;
   status: string;
-  experience: string;
   category: 'Frontend' | 'Backend' | 'Database / Cloud' | 'Tools & AI';
 }
 
 const SKILLS_DATA: SkillItem[] = [
-  { name: 'TypeScript / JavaScript (ESNext)', status: 'PROD READY', experience: 'Core Stack', category: 'Frontend' },
-  { name: 'React 18 / 19 & Next.js 15', status: 'PROD READY', experience: 'FullStack', category: 'Frontend' },
-  { name: 'Tailwind CSS & CSS Modules', status: 'ADVANCED', experience: 'UI Design', category: 'Frontend' },
-  { name: 'HTML5 Canvas & WebGL Animations', status: 'ADVANCED', experience: 'Interactive UI', category: 'Frontend' },
-  { name: 'Framer Motion & Modern Web UI', status: 'ADVANCED', experience: 'UI Animations', category: 'Frontend' },
+  { name: 'TypeScript / JavaScript (ESNext)', status: 'PROD READY', category: 'Frontend' },
+  { name: 'React 18 / 19 & Next.js 15', status: 'PROD READY', category: 'Frontend' },
+  { name: 'Tailwind CSS & CSS Modules', status: 'ADVANCED', category: 'Frontend' },
+  { name: 'HTML5 Canvas & WebGL Animations', status: 'ADVANCED', category: 'Frontend' },
+  { name: 'Framer Motion & Modern Web UI', status: 'ADVANCED', category: 'Frontend' },
 
-  { name: 'Node.js & Express / NestJS', status: 'PROD READY', experience: 'Backend APIs', category: 'Backend' },
-  { name: 'REST APIs & GraphQL Services', status: 'PROD READY', experience: 'API Routes', category: 'Backend' },
-  { name: 'Discord.js & SaaS Bot Engines', status: 'EXPERT', experience: 'Bot Architecture', category: 'Backend' },
-  { name: 'Python & FastAPI', status: 'PROFICIENT', experience: 'Scripting & AI', category: 'Backend' },
+  { name: 'Node.js & Express / NestJS', status: 'PROD READY', category: 'Backend' },
+  { name: 'REST APIs & GraphQL Services', status: 'PROD READY', category: 'Backend' },
+  { name: 'Discord.js & SaaS Bot Engines', status: 'EXPERT', category: 'Backend' },
+  { name: 'Python & FastAPI', status: 'PROFICIENT', category: 'Backend' },
 
-  { name: 'PostgreSQL & Prisma ORM', status: 'PROD READY', experience: 'Relational DB', category: 'Database / Cloud' },
-  { name: 'MongoDB & Mongoose Schema', status: 'PROD READY', experience: 'NoSQL DB', category: 'Database / Cloud' },
-  { name: 'Docker & Containerization', status: 'ADVANCED', experience: 'DevOps & Containers', category: 'Database / Cloud' },
-  { name: 'Google Cloud GCP & Vercel', status: 'PROD READY', experience: 'Cloud Hosting', category: 'Database / Cloud' },
+  { name: 'PostgreSQL & Prisma ORM', status: 'PROD READY', category: 'Database / Cloud' },
+  { name: 'MongoDB & Mongoose Schema', status: 'PROD READY', category: 'Database / Cloud' },
+  { name: 'Docker & Containerization', status: 'ADVANCED', category: 'Database / Cloud' },
+  { name: 'Google Cloud GCP & Vercel', status: 'PROD READY', category: 'Database / Cloud' },
 
-  { name: 'Gemini AI API & OpenAI SDK', status: 'ADVANCED', experience: 'GenAI Tools', category: 'Tools & AI' },
-  { name: 'Git, GitHub & CI/CD Pipelines', status: 'PROD READY', experience: 'Version Control', category: 'Tools & AI' },
-  { name: 'Vite & Webpack Tooling', status: 'PROD READY', experience: 'Build Pipeline', category: 'Tools & AI' },
+  { name: 'Gemini AI API & OpenAI SDK', status: 'ADVANCED', category: 'Tools & AI' },
+  { name: 'Git, GitHub & CI/CD Pipelines', status: 'PROD READY', category: 'Tools & AI' },
+  { name: 'Vite & Webpack Tooling', status: 'PROD READY', category: 'Tools & AI' },
 ];
 
 export const SkillsApp: React.FC = () => {
@@ -180,9 +179,6 @@ export const SkillsApp: React.FC = () => {
                 <span className="font-orbitron font-bold text-slate-100">{skill.name}</span>
               </div>
               <div className="flex items-center gap-2 font-tech">
-                <span className="text-[10px] px-2 py-0.5 rounded bg-black/80 text-slate-400 border border-white/10">
-                  {skill.experience}
-                </span>
                 <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono bg-black/80 border border-white/10 ${theme.textColor}`}>
                   {skill.status}
                 </span>

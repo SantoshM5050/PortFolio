@@ -120,28 +120,28 @@ export const SKILLS_DATA: SkillCategory[] = [
   {
     name: 'Software Engineering & Web Core',
     skills: [
-      { name: 'JavaScript (ESNext) / TypeScript', status: 'PROD READY', level: 100, experience: 'Academic & Projects' },
-      { name: 'React 19 / Next.js', status: 'PROD READY', level: 100, experience: 'FullStack Projects' },
-      { name: 'HTML5 / Tailwind CSS / Glassmorphism', status: 'ADVANCED', level: 100, experience: 'UI Architecture' },
-      { name: 'Node.js / Express.js', status: 'PROD READY', level: 100, experience: 'Backend APIs' },
+      { name: 'JavaScript (ESNext) / TypeScript', status: 'PROD READY', level: 100 },
+      { name: 'React 19 / Next.js', status: 'PROD READY', level: 100 },
+      { name: 'HTML5 / Tailwind CSS / Glassmorphism', status: 'ADVANCED', level: 100 },
+      { name: 'Node.js / Express.js', status: 'PROD READY', level: 100 },
     ],
   },
   {
     name: 'Computer Science Fundamentals & DBMS',
     skills: [
-      { name: 'Data Structures & Algorithms (DSA)', status: 'PROFICIENT', level: 100, experience: 'SPPU Curriculum & Practice' },
-      { name: 'Database Management Systems (DBMS)', status: 'PROD READY', level: 100, experience: 'PostgreSQL / MongoDB / SQL' },
-      { name: 'Computer Networks & Web Security', status: 'CORE STACK', level: 100, experience: 'B.E. IT Core' },
-      { name: 'Software Development Lifecycle (SDLC)', status: 'ADVANCED', level: 100, experience: 'Agile & Support Workflows' },
+      { name: 'Data Structures & Algorithms (DSA)', status: 'PROFICIENT', level: 100 },
+      { name: 'Database Management Systems (DBMS)', status: 'PROD READY', level: 100 },
+      { name: 'Computer Networks & Web Security', status: 'CORE STACK', level: 100 },
+      { name: 'Software Development Lifecycle (SDLC)', status: 'ADVANCED', level: 100 },
     ],
   },
   {
     name: 'Support Engineering, Tools & Cloud',
     skills: [
-      { name: 'Software Support & NCampus CMS', status: 'EXPERT', level: 100, experience: 'Nevitech Data Solutions' },
-      { name: 'Git / GitHub Version Control', status: 'PROD READY', level: 100, experience: 'CI/CD Pipelines' },
-      { name: 'Python & FastAPI', status: 'PROFICIENT', level: 100, experience: 'Automation Scripts' },
-      { name: 'Vite / Docker / Cloud Deployment', status: 'ADVANCED', level: 100, experience: 'Modern Tooling' },
+      { name: 'Software Support & NCampus CMS', status: 'EXPERT', level: 100 },
+      { name: 'Git / GitHub Version Control', status: 'PROD READY', level: 100 },
+      { name: 'Python & FastAPI', status: 'PROFICIENT', level: 100 },
+      { name: 'Vite / Docker / Cloud Deployment', status: 'ADVANCED', level: 100 },
     ],
   },
 ];
