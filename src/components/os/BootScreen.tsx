@@ -319,7 +319,189 @@ export const BootScreen: React.FC = () => {
     );
   }
 
-  // 3. SYNTHWAVE 80S UNIQUE BOOT SCREEN
+  // 4. STARK SPATIAL HUD MARK-88 UNIQUE BOOT SCREEN
+  if (interfaceMode === 'stark_hud') {
+    return (
+      <div className="fixed inset-0 z-[99999] bg-[#080202] font-mono flex flex-col justify-between p-6 select-none text-amber-400 overflow-hidden">
+        {/* Arc Reactor Crimson Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-red-600/15 blur-[140px] pointer-events-none" />
+
+        {/* Top Header */}
+        <div className="relative z-10 flex justify-between items-center border-b border-amber-500/40 pb-4 bg-black/90 backdrop-blur-md p-4 rounded-xl shadow-[0_0_30px_rgba(255,170,0,0.2)]">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full border-2 border-amber-400 border-t-red-500 flex items-center justify-center animate-spin" style={{ animationDuration: '3s' }}>
+              <Crosshair className="w-5 h-5 text-amber-400" />
+            </div>
+            <div>
+              <h1 className="font-orbitron font-black text-xl text-white tracking-widest text-glow-amber">STARK HUD MARK-88</h1>
+              <p className="text-xs text-red-400 font-tech">JARVIS SPATIAL TARGETING PROTOCOL</p>
+            </div>
+          </div>
+          <button
+            onClick={completeBoot}
+            className="flex items-center gap-2 px-4 py-2 bg-amber-950 hover:bg-amber-900 border border-amber-500/60 text-amber-300 text-xs font-orbitron rounded-lg cursor-pointer"
+          >
+            <Play className="w-3.5 h-3.5 fill-amber-400" />
+            SKIP BOOT
+          </button>
+        </div>
+
+        {/* Biometric Arc Reactor Target Center Console */}
+        <div className="relative z-10 my-auto max-w-3xl w-full mx-auto p-6 rounded-2xl bg-black/90 border-2 border-amber-500/70 shadow-[0_0_60px_rgba(255,170,0,0.3)] space-y-4 font-tech text-xs">
+          <div className="flex items-center justify-between text-amber-400 font-bold border-b border-amber-500/30 pb-2 font-orbitron">
+            <span>ARC REACTOR BIOMETRIC SYNC // STARK INDUSTRIES</span>
+            <span className="text-[10px] text-red-400">100% POWER</span>
+          </div>
+
+          <div className="space-y-2 h-44 overflow-y-auto">
+            {modeDetails.logs.slice(0, currentStep + 1).map((log, i) => (
+              <div key={i} className="flex gap-2">
+                <span className="text-red-500">[JARVIS]</span>
+                <span className={i === currentStep ? 'text-white font-bold' : 'text-amber-300/80'}>{log}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-amber-500/30 space-y-1">
+            <div className="flex justify-between text-[11px] text-amber-300 font-orbitron">
+              <span>TARGET LOCK & ENERGY CAPACITY</span>
+              <span>{progress}%</span>
+            </div>
+            <div className="w-full h-3 rounded-full bg-black border border-amber-500/40 overflow-hidden p-0.5">
+              <div className="h-full bg-gradient-to-r from-red-600 via-amber-500 to-yellow-400 rounded-full transition-all" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 flex justify-between text-[11px] text-amber-600 font-tech">
+          <span>PILOT: SANTOSH MAURYA [MARK-88]</span>
+          <span>SYSTEM: JARVIS SPATIAL ONLINE</span>
+        </div>
+      </div>
+    );
+  }
+
+  // 5. INTERSTELLAR COMMAND BRIDGE UNIQUE BOOT SCREEN
+  if (interfaceMode === 'interstellar_bridge') {
+    return (
+      <div className="fixed inset-0 z-[99999] bg-[#020a08] font-mono flex flex-col justify-between p-6 select-none text-emerald-300 overflow-hidden">
+        {/* Starfield Deep Space Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[150px] pointer-events-none" />
+
+        {/* Top Header */}
+        <div className="relative z-10 flex justify-between items-center border-b border-emerald-500/40 pb-4 bg-slate-950/90 backdrop-blur-md p-4 rounded-xl shadow-[0_0_30px_rgba(0,255,102,0.2)]">
+          <div className="flex items-center gap-3">
+            <Rocket className="w-7 h-7 text-emerald-400 animate-bounce" />
+            <div>
+              <h1 className="font-orbitron font-black text-xl text-white tracking-widest text-glow-emerald">INTERSTELLAR COCKPIT</h1>
+              <p className="text-xs text-teal-400 font-tech">STARSHIP SANTOSH-01 WARP ENGINE</p>
+            </div>
+          </div>
+          <button
+            onClick={completeBoot}
+            className="flex items-center gap-2 px-4 py-2 bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/60 text-emerald-300 text-xs font-orbitron rounded-lg cursor-pointer"
+          >
+            <Play className="w-3.5 h-3.5 fill-emerald-400" />
+            SKIP BOOT
+          </button>
+        </div>
+
+        {/* Navigation Command Diagnostics Box */}
+        <div className="relative z-10 my-auto max-w-3xl w-full mx-auto p-6 rounded-2xl bg-slate-950/95 border-2 border-emerald-500/70 shadow-[0_0_60px_rgba(0,255,102,0.3)] space-y-4 font-tech text-xs">
+          <div className="flex items-center justify-between text-emerald-400 font-bold border-b border-emerald-500/30 pb-2 font-orbitron">
+            <span>WARP SPEED NAVIGATION COMPUTATION // SANTOSH-01</span>
+            <span className="text-[10px] text-teal-300">WARP 9.8</span>
+          </div>
+
+          <div className="space-y-2 h-44 overflow-y-auto">
+            {modeDetails.logs.slice(0, currentStep + 1).map((log, i) => (
+              <div key={i} className="flex gap-2">
+                <span className="text-teal-400">⚡</span>
+                <span className={i === currentStep ? 'text-white font-bold' : 'text-emerald-300/80'}>{log}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-emerald-500/30 space-y-1">
+            <div className="flex justify-between text-[11px] text-teal-300 font-orbitron">
+              <span>ANTIMATTER PLASMA THRUSTER CHARGE</span>
+              <span>{progress}%</span>
+            </div>
+            <div className="w-full h-3 rounded-full bg-black border border-emerald-500/40 overflow-hidden p-0.5">
+              <div className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 rounded-full transition-all" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 flex justify-between text-[11px] text-emerald-500 font-tech">
+          <span>COMMANDER: SANTOSH MAURYA [STARSHIP SANTOSH-01]</span>
+          <span>WARP ENGINE: PRIMED FOR IGNITION</span>
+        </div>
+      </div>
+    );
+  }
+
+  // 6. QUANTUM NEURAL MATRIX UNIQUE BOOT SCREEN
+  if (interfaceMode === 'quantum_matrix') {
+    return (
+      <div className="fixed inset-0 z-[99999] bg-[#030614] font-mono flex flex-col justify-between p-6 select-none text-cyan-300 overflow-hidden">
+        {/* Holographic Synapse Cyan Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan-500/15 blur-[150px] pointer-events-none" />
+
+        {/* Top Header */}
+        <div className="relative z-10 flex justify-between items-center border-b border-cyan-500/40 pb-4 bg-slate-950/90 backdrop-blur-md p-4 rounded-xl shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+          <div className="flex items-center gap-3">
+            <Sparkles className="w-7 h-7 text-cyan-400 animate-pulse" />
+            <div>
+              <h1 className="font-orbitron font-black text-xl text-white tracking-widest text-glow-cyan">QUANTUM MATRIX v3.0</h1>
+              <p className="text-xs text-purple-400 font-tech">3D HOLOGRAPHIC SYNAPSE MESH PROTOCOL</p>
+            </div>
+          </div>
+          <button
+            onClick={completeBoot}
+            className="flex items-center gap-2 px-4 py-2 bg-cyan-950 hover:bg-cyan-900 border border-cyan-500/60 text-cyan-300 text-xs font-orbitron rounded-lg cursor-pointer"
+          >
+            <Play className="w-3.5 h-3.5 fill-cyan-400" />
+            SKIP BOOT
+          </button>
+        </div>
+
+        {/* Quantum Constellation Diagnostic Console */}
+        <div className="relative z-10 my-auto max-w-3xl w-full mx-auto p-6 rounded-2xl bg-slate-950/95 border-2 border-cyan-500/70 shadow-[0_0_60px_rgba(0,240,255,0.3)] space-y-4 font-tech text-xs">
+          <div className="flex items-center justify-between text-cyan-400 font-bold border-b border-cyan-500/30 pb-2 font-orbitron">
+            <span>SYNAPSE NODE CONSTELLATION SYNC // QUANTUM ENGINES</span>
+            <span className="text-[10px] text-purple-300">1024 QUBITS</span>
+          </div>
+
+          <div className="space-y-2 h-44 overflow-y-auto">
+            {modeDetails.logs.slice(0, currentStep + 1).map((log, i) => (
+              <div key={i} className="flex gap-2">
+                <span className="text-purple-400">❖</span>
+                <span className={i === currentStep ? 'text-white font-bold' : 'text-cyan-300/80'}>{log}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-cyan-500/30 space-y-1">
+            <div className="flex justify-between text-[11px] text-cyan-300 font-orbitron">
+              <span>HOLOGRAPHIC VRAM ALLOCATION</span>
+              <span>{progress}%</span>
+            </div>
+            <div className="w-full h-3 rounded-full bg-black border border-cyan-500/40 overflow-hidden p-0.5">
+              <div className="h-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full transition-all" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 flex justify-between text-[11px] text-cyan-500 font-tech">
+          <span>OPERATOR: SANTOSH MAURYA (B.E. IT 2025)</span>
+          <span>NEURAL SYNAPSE MESH: OPERATIONAL</span>
+        </div>
+      </div>
+    );
+  }
+
+  // 7. SYNTHWAVE 80S UNIQUE BOOT SCREEN (already defined above)
   if (interfaceMode === 'synthwave_arcade') {
     return (
       <div className="fixed inset-0 z-[99999] bg-black font-mono flex flex-col justify-between p-6 select-none text-pink-400 overflow-hidden">

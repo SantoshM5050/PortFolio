@@ -25,7 +25,7 @@ interface WindowFrameProps {
 export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children }) => {
   const {
     activeWindowId,
-    theme,
+    interfaceMode,
     focusWindow,
     closeWindow,
     minimizeWindow,
@@ -36,6 +36,64 @@ export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children 
 
   const isFocused = activeWindowId === windowState.id;
   const IconComponent = ICON_MAP[windowState.icon] || Terminal;
+
+  // Universe-specific window border & shadow styling
+  const getUniverseWindowStyles = () => {
+    switch (interfaceMode) {
+      case 'matrix_rain':
+        return {
+          border: isFocused ? 'border-emerald-500/80 shadow-[0_0_30px_rgba(0,255,102,0.3)] bg-black/95' : 'border-emerald-900/50 bg-black/90',
+          header: isFocused ? 'bg-emerald-950/90 text-emerald-300' : 'bg-black/90 text-slate-400',
+          badge: 'MATRIX_NODE',
+          accentIcon: 'text-emerald-400',
+        };
+      case 'synthwave_arcade':
+        return {
+          border: isFocused ? 'border-pink-500/80 shadow-[0_0_30px_rgba(255,0,128,0.3)] bg-black/95' : 'border-pink-900/50 bg-black/90',
+          header: isFocused ? 'bg-pink-950/90 text-pink-300' : 'bg-black/90 text-slate-400',
+          badge: '80S_RETRO',
+          accentIcon: 'text-pink-400',
+        };
+      case 'stark_hud':
+        return {
+          border: isFocused ? 'border-amber-500/80 shadow-[0_0_30px_rgba(255,170,0,0.3)] bg-black/95' : 'border-amber-900/50 bg-black/90',
+          header: isFocused ? 'bg-amber-950/90 text-amber-300' : 'bg-black/90 text-slate-400',
+          badge: 'MARK-88 HUD',
+          accentIcon: 'text-amber-400',
+        };
+      case 'interstellar_bridge':
+        return {
+          border: isFocused ? 'border-teal-500/80 shadow-[0_0_30px_rgba(20,184,166,0.3)] bg-slate-950/95' : 'border-teal-900/50 bg-slate-950/90',
+          header: isFocused ? 'bg-teal-950/90 text-teal-300' : 'bg-slate-950/90 text-slate-400',
+          badge: 'STARSHIP_BEACON',
+          accentIcon: 'text-teal-400',
+        };
+      case 'quantum_matrix':
+        return {
+          border: isFocused ? 'border-cyan-400/80 shadow-[0_0_30px_rgba(0,240,255,0.3)] bg-slate-950/95' : 'border-cyan-950/50 bg-slate-950/90',
+          header: isFocused ? 'bg-cyan-950/90 text-cyan-300' : 'bg-slate-950/90 text-slate-400',
+          badge: 'QUANTUM_SYNAPSE',
+          accentIcon: 'text-cyan-400',
+        };
+      case 'windows_12_pro':
+        return {
+          border: isFocused ? 'border-blue-500/60 shadow-[0_0_35px_rgba(59,130,246,0.35)] bg-slate-900/90' : 'border-white/10 bg-slate-950/80',
+          header: isFocused ? 'bg-slate-900/90 text-white' : 'bg-slate-950/80 text-slate-400',
+          badge: 'WIN12_FLUENT',
+          accentIcon: 'text-blue-400',
+        };
+      case 'cyberos':
+      default:
+        return {
+          border: isFocused ? 'border-cyan-400/80 shadow-[0_0_25px_rgba(0,240,255,0.25)] bg-slate-950/90' : 'border-cyan-900/40 opacity-90 bg-slate-950/90',
+          header: isFocused ? 'bg-cyan-950/90 text-cyan-300' : 'bg-slate-950/90 text-slate-400',
+          badge: 'CYBER_PROCESS',
+          accentIcon: 'text-cyan-400',
+        };
+    }
+  };
+
+  const uniStyle = getUniverseWindowStyles();
 
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
@@ -113,21 +171,6 @@ export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children 
     return null;
   }
 
-  // Theme-specific window border colors
-  const themeBorderClasses = {
-    cyberpunk: isFocused ? 'border-cyan-400/80 shadow-[0_0_25px_rgba(0,240,255,0.25)]' : 'border-cyan-900/40 opacity-90',
-    synthwave: isFocused ? 'border-pink-500/80 shadow-[0_0_25px_rgba(255,0,128,0.25)]' : 'border-pink-900/40 opacity-90',
-    matrix: isFocused ? 'border-emerald-500/80 shadow-[0_0_25px_rgba(0,255,102,0.25)]' : 'border-emerald-900/40 opacity-90',
-    solar: isFocused ? 'border-amber-400/80 shadow-[0_0_25px_rgba(255,170,0,0.25)]' : 'border-amber-900/40 opacity-90',
-  }[theme];
-
-  const themeHeaderClasses = {
-    cyberpunk: isFocused ? 'bg-cyan-950/90 text-cyan-300' : 'bg-slate-950/90 text-slate-400',
-    synthwave: isFocused ? 'bg-pink-950/90 text-pink-300' : 'bg-slate-950/90 text-slate-400',
-    matrix: isFocused ? 'bg-emerald-950/90 text-emerald-300' : 'bg-slate-950/90 text-slate-400',
-    solar: isFocused ? 'bg-amber-950/90 text-amber-300' : 'bg-slate-950/90 text-slate-400',
-  }[theme];
-
   const style: React.CSSProperties = windowState.isMaximized
     ? {
         position: 'fixed',
@@ -150,21 +193,21 @@ export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState, children 
     <div
       onClick={() => focusWindow(windowState.id)}
       style={style}
-      className={`cyber-glass pointer-events-auto flex flex-col ${windowState.isMaximized ? 'rounded-none border-t-0' : 'rounded-lg border'} overflow-hidden transition-shadow duration-200 select-none ${themeBorderClasses}`}
+      className={`cyber-glass pointer-events-auto flex flex-col ${windowState.isMaximized ? 'rounded-none border-t-0' : 'rounded-xl border'} overflow-hidden transition-all duration-200 select-none ${uniStyle.border}`}
     >
       {/* Titlebar Header */}
       <div
         onMouseDown={handleTitleStart}
         onTouchStart={handleTitleStart}
         onDoubleClick={() => maximizeWindow(windowState.id)}
-        className={`flex items-center justify-between px-3 py-2 border-b border-white/10 cursor-move ${themeHeaderClasses}`}
+        className={`flex items-center justify-between px-3.5 py-2 border-b border-white/10 cursor-move ${uniStyle.header}`}
       >
         {/* Left Info */}
-        <div className="flex items-center gap-2 font-orbitron text-xs font-semibold tracking-wide truncate">
-          <IconComponent className="w-4 h-4 shrink-0 text-cyan-400" />
+        <div className="flex items-center gap-2 font-orbitron text-xs font-bold tracking-wide truncate">
+          <IconComponent className={`w-4 h-4 shrink-0 ${uniStyle.accentIcon}`} />
           <span className="truncate">{windowState.title}</span>
-          <span className="text-[10px] text-slate-500 font-tech px-1.5 py-0.5 bg-black/40 rounded border border-white/10">
-            PID:{Math.floor(1000 + windowState.zIndex * 42)}
+          <span className="text-[10px] font-tech px-1.5 py-0.5 bg-black/40 rounded border border-white/10 text-slate-300">
+            {uniStyle.badge}
           </span>
         </div>
 
