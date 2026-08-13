@@ -186,10 +186,12 @@ export const Windows11ProMode: React.FC = () => {
               key={win.id}
               onClick={() => focusWindow(win.id)}
               style={{
-                top: win.isMaximized ? '48px' : `${Math.max(win.position.y, 80)}px`,
-                left: win.isMaximized ? '0px' : `${win.position.x}px`,
+                top: win.isMaximized ? '48px' : `${Math.min(Math.max(win.position.y, 60), Math.max(60, (typeof window !== 'undefined' ? window.innerHeight : 800) - 200))}px`,
+                left: win.isMaximized ? '0px' : `${Math.min(Math.max(win.position.x, 10), Math.max(10, (typeof window !== 'undefined' ? window.innerWidth : 1200) - 300))}px`,
                 width: win.isMaximized ? '100%' : `${win.size.width}px`,
                 height: win.isMaximized ? 'calc(100vh - 105px)' : `${win.size.height}px`,
+                maxWidth: win.isMaximized ? '100vw' : 'calc(100vw - 20px)',
+                maxHeight: win.isMaximized ? 'calc(100vh - 105px)' : 'calc(100vh - 120px)',
                 zIndex: win.zIndex,
                 display: win.isMinimized ? 'none' : 'flex',
               }}
@@ -204,7 +206,7 @@ export const Windows11ProMode: React.FC = () => {
                 onMouseDown={(e) => handleDragStart(win.id, win.isMaximized, e)}
                 onTouchStart={(e) => handleDragStart(win.id, win.isMaximized, e)}
                 onDoubleClick={() => maximizeWindow(win.id)}
-                className="flex items-center justify-between px-4 py-3 bg-slate-950/70 border-b border-white/10 select-none cursor-move"
+                className="flex items-center justify-between px-4 py-3 bg-slate-950/70 border-b border-white/10 select-none cursor-move shrink-0"
               >
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-blue-500" />
@@ -244,7 +246,7 @@ export const Windows11ProMode: React.FC = () => {
               </div>
 
               {/* Window Body Content */}
-              <div className="flex-1 overflow-auto bg-slate-950/40">
+              <div className="flex-1 min-h-0 overflow-hidden flex flex-col relative bg-slate-950/40">
                 <Windows11AppRenderer windowId={win.id} />
               </div>
             </div>

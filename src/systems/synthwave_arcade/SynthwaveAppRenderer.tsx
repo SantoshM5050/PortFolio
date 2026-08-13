@@ -243,7 +243,7 @@ export const SynthwaveAppRenderer: React.FC<Props> = ({ windowId }) => {
 
   // Fallback
   return (
-    <div className="h-full font-mono text-pink-400">
+    <div className="h-full flex flex-col min-h-0 overflow-hidden font-mono text-pink-400">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}

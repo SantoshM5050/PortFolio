@@ -506,7 +506,7 @@ export const CodeLabApp: React.FC = () => {
 
       {/* VIEW 1: ARCHITECTURE EXPLORER VAULT */}
       {activeTab === 'explorer' && (
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 min-h-0 flex overflow-hidden">
           {/* Sidebar File Explorer Tree */}
           <div className="w-64 bg-[#0a0e17] border-r border-white/10 flex flex-col shrink-0 select-none overflow-y-auto">
             <div className="px-3 py-2 text-[11px] font-bold text-slate-400 tracking-wider uppercase border-b border-white/5 flex items-center gap-1.5">
@@ -568,7 +568,7 @@ export const CodeLabApp: React.FC = () => {
           </div>
 
           {/* Right Code Editor Area */}
-          <div className="flex-1 flex flex-col bg-[#080c14] overflow-hidden">
+          <div className="flex-1 min-h-0 flex flex-col bg-[#080c14] overflow-hidden">
             {/* Active File Tab Bar */}
             <div className="flex items-center bg-[#0d121f] border-b border-white/10 px-2 overflow-x-auto text-xs shrink-0">
               {SAMPLE_FILES.map((f) => (
@@ -598,7 +598,7 @@ export const CodeLabApp: React.FC = () => {
             </div>
 
             {/* Code Viewer with Line Numbers */}
-            <div className="flex-1 overflow-auto p-4 font-mono text-xs text-slate-200 leading-relaxed select-text bg-[#070a10]">
+            <div className="flex-1 min-h-0 overflow-auto p-4 font-mono text-xs text-slate-200 leading-relaxed select-text bg-[#070a10]">
               <table className="w-full border-collapse">
                 <tbody>
                   {activeFile.code.split('\n').map((line, idx) => (
@@ -620,7 +620,7 @@ export const CodeLabApp: React.FC = () => {
 
       {/* VIEW 2: INTERACTIVE MULTI-LANGUAGE CODE COMPILER SANDBOX */}
       {activeTab === 'playground' && (
-        <div className="flex-1 flex flex-col overflow-hidden bg-[#070a10]">
+        <div className="flex-1 min-h-0 flex flex-col overflow-hidden bg-[#070a10]">
           {/* Compiler Language Bar & Run Button */}
           <div className="px-4 py-2.5 bg-[#0a0e17] border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
             <div className="flex items-center gap-2 overflow-x-auto">
@@ -667,10 +667,10 @@ export const CodeLabApp: React.FC = () => {
           </div>
 
           {/* Code Playground Editor & Output Console (Split View) */}
-          <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+          <div className="flex-1 min-h-0 flex flex-col md:flex-row overflow-hidden">
             {/* Left Editable Code Editor */}
-            <div className="flex-1 flex flex-col border-r border-white/10 overflow-hidden bg-[#05080f]">
-              <div className="px-3 py-1.5 bg-[#090d16] border-b border-white/5 flex items-center justify-between text-[11px] text-slate-400 font-tech">
+            <div className="flex-1 min-h-0 flex flex-col border-r border-white/10 overflow-hidden bg-[#05080f]">
+              <div className="px-3 py-1.5 bg-[#090d16] border-b border-white/5 flex items-center justify-between text-[11px] text-slate-400 font-tech shrink-0">
                 <span>EDITABLE CODE EDITOR ({LANGUAGE_PRESETS[selectedLang].ext})</span>
                 <span className="text-cyan-400">INPUT SOURCE</span>
               </div>
@@ -683,8 +683,8 @@ export const CodeLabApp: React.FC = () => {
             </div>
 
             {/* Right Output Terminal Console */}
-            <div className="w-full md:w-1/2 flex flex-col bg-black overflow-hidden border-t md:border-t-0 border-white/10">
-              <div className="px-3 py-1.5 bg-[#090d16] border-b border-white/10 flex items-center justify-between text-[11px] font-tech text-slate-300">
+            <div className="w-full md:w-1/2 flex flex-col min-h-0 bg-black overflow-hidden border-t md:border-t-0 border-white/10">
+              <div className="px-3 py-1.5 bg-[#090d16] border-b border-white/10 flex items-center justify-between text-[11px] font-tech text-slate-300 shrink-0">
                 <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
                   <TerminalIcon className="w-3.5 h-3.5" /> OUTPUT CONSOLE (STDOUT)
                 </span>

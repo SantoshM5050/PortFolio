@@ -242,7 +242,7 @@ export const InterstellarAppRenderer: React.FC<Props> = ({ windowId }) => {
 
   // Fallback
   return (
-    <div className="h-full font-mono text-emerald-300">
+    <div className="h-full flex flex-col min-h-0 overflow-hidden font-mono text-emerald-300">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}

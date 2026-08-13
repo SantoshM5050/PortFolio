@@ -16,7 +16,7 @@ interface Props {
 
 export const QuantumAppRenderer: React.FC<Props> = ({ windowId }) => {
   return (
-    <div className="quantum-universe-container text-cyan-300 font-mono h-full flex flex-col">
+    <div className="quantum-universe-container text-cyan-300 font-mono h-full flex flex-col min-h-0 overflow-hidden">
       {windowId === 'about' && <AboutApp />}
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'projects' && <ProjectsApp />}

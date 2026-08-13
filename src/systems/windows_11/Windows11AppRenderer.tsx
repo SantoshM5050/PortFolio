@@ -23,7 +23,7 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
   // ----------------------------------------------------
   if (windowId === 'about') {
     return (
-      <div className="font-sans text-slate-100 p-6 space-y-6 select-text">
+      <div className="font-sans text-slate-100 p-6 space-y-6 select-text h-full overflow-auto">
         {/* Windows 11 Fluent Profile Header */}
         <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col sm:flex-row items-center gap-6">
           <img
@@ -143,7 +143,7 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
   // ----------------------------------------------------
   if (windowId === 'skills') {
     return (
-      <div className="font-sans text-slate-100 p-6 space-y-6 select-text">
+      <div className="font-sans text-slate-100 p-6 space-y-6 select-text h-full overflow-auto">
         <div className="p-4 rounded-xl bg-slate-800/80 border border-white/10 text-xs font-semibold text-blue-400 flex items-center gap-2">
           <Cpu className="w-4 h-4" /> Windows 12 Task Manager - Technical Skill Meter
         </div>
@@ -181,7 +181,7 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
   // ----------------------------------------------------
   if (windowId === 'projects') {
     return (
-      <div className="font-sans text-slate-100 p-6 space-y-6 select-text">
+      <div className="font-sans text-slate-100 p-6 space-y-6 select-text h-full overflow-auto">
         <div className="p-4 rounded-xl bg-slate-800/80 border border-white/10 text-xs font-semibold text-blue-400 flex items-center gap-2">
           <FolderGit2 className="w-4 h-4" /> Windows File Explorer - Featured Projects Directory
         </div>
@@ -233,7 +233,7 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
   // ----------------------------------------------------
   if (windowId === 'contact') {
     return (
-      <div className="font-sans text-slate-100 p-6 space-y-6 select-text">
+      <div className="font-sans text-slate-100 p-6 space-y-6 select-text h-full overflow-auto">
         <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 backdrop-blur-xl shadow-2xl space-y-4">
           <div className="flex items-center gap-2 text-sm font-bold text-white border-b border-white/10 pb-3">
             <Send className="w-5 h-5 text-blue-400" /> Windows Mail & Communication Hub
@@ -292,7 +292,7 @@ export const Windows11AppRenderer: React.FC<Props> = ({ windowId }) => {
 
   // Fallback
   return (
-    <div className="h-full font-mono text-slate-200">
+    <div className="h-full flex flex-col min-h-0 overflow-hidden font-mono text-slate-200">
       {windowId === 'terminal' && <TerminalApp />}
       {windowId === 'music' && <MusicApp />}
       {windowId === 'game' && <GameApp />}
